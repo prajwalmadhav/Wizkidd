@@ -32,8 +32,9 @@ const Home = () => {
       {/* All cards */} 
       <Heading as='h2' size='xl' 
       ml = {{ base: '25px', md: 20, lg: '15%' }}
-      mt = {{ base: '15px'}} >
-         | Courses Offered
+      mt = {{ base: '15px'}} 
+      mb={{lg:'-50px'}}>
+         | COURSES AVAILABLE
       </Heading> 
       <br/>
       
@@ -44,7 +45,7 @@ const Home = () => {
       <Flex
       ml = {{ base: 0, md: 20, lg: '5%' }}
       mx = {{ base: 1 }}
-      // my = {{ base : 0, lg : 10 }}
+      my = {{ base : 0, lg : 20 }}
       justifyContent = {{ base: "", lg: "center" }}
       px = {4}
       direction={{ base: "column", md: "column", lg: "row" }}
@@ -87,7 +88,7 @@ const Home = () => {
               <Icon as={FaRegBookmark} h={6} w={6} color="white" />
 
               <chakra.h1 mx={3} color="white" fontWeight="bold" fontSize="lg">
-                Basics of Programming 
+                Course 1
               </chakra.h1>
             </Flex>
 
@@ -181,7 +182,7 @@ const Home = () => {
               <Icon as={FaRegBookmark} h={6} w={6} color="white" />
 
               <chakra.h1 mx={3} color="white" fontWeight="bold" fontSize="lg">
-              Programming Language 
+              Course 2 
               </chakra.h1>
             </Flex>
 
@@ -275,7 +276,7 @@ const Home = () => {
               <Icon as={FaRegBookmark} h={6} w={6} color="white" />
 
               <chakra.h1 mx={3} color="white" fontWeight="bold" fontSize="lg">
-              Exception handling  
+              Course 3  
               </chakra.h1>
             </Flex>
 

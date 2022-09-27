@@ -6,6 +6,7 @@ import Features3 from '../../components/LandingPage/Features/Features3';
 import Testimonials from './../../components/LandingPage/Testimonials/Testimonials';
 import Features5 from '../../components/LandingPage/Features/Features5';
 import Features6 from '../../components/LandingPage/Features/Features6';
+import Features7 from '../../components/LandingPage/Features/Features7';
 
 export default function Homepage() {
     return (
@@ -15,6 +16,7 @@ export default function Homepage() {
             <Hero />
             {/* <Features1 /> */}
             <Features2 />
+            <Features7 />
             <Features3 />
             {/* <Features4 /> */}
             <Features5 />

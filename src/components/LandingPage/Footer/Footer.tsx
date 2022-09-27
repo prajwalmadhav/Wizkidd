@@ -62,9 +62,18 @@ export default function LargeWithLogoCentered() {
     <Box
       bg={useColorModeValue('gray.200', 'gray.900')}  //#04294f
       color={useColorModeValue('gray.700', 'gray.200')}>
-      <Container as={Stack} maxW={'6xl'} py={10}>
+      <Container as={Stack} maxW={'6xl'} py={'125'}>
         <SimpleGrid columns={{ base: 2, sm: 2, md: 4 }} spacing={8}>
         
+        <Box py={10}>
+        <Flex>
+          <img alt='logo' style={{ width: 50 }} src={ Logo }  />
+        </Flex>
+        <Text ml={'-200px'}pt={6} fontSize={'md'} textAlign={'center'}>
+          © 2022 Wizkid. All rights reserved
+        </Text>
+      </Box>
+
         <Stack align={'flex-start'}>
             <ListHeader>Technology</ListHeader>
             <Link href={'#'}>Firebase</Link>
@@ -74,16 +83,6 @@ export default function LargeWithLogoCentered() {
             <Link href={'#'}>VS Code</Link>
           </Stack>
         
-
-          <Stack align={'flex-start'}>
-            <ListHeader>Languages</ListHeader>
-            <Link href={'#'}>React</Link>
-            <Link href={'#'}>TypeScript</Link>
-            <Link href={'#'}>JavaScript</Link>
-            <Link href={'#'}>Python</Link>
-            <Link href={'#'}>CSS</Link>
-          </Stack>
-
           <Stack align={'flex-start'}>
             <ListHeader>Product</ListHeader>
             <Link href={'#'}>Overview</Link>
@@ -91,7 +90,7 @@ export default function LargeWithLogoCentered() {
               <Link href={'#'}>Features</Link>
               <Tag
                 size={'sm'}
-                bg={useColorModeValue('#f04e23', '#f04e23')}
+                bg={useColorModeValue('#000', '#000')}
                 ml={2}
                 color={'white'}>
                 New
@@ -125,10 +124,10 @@ export default function LargeWithLogoCentered() {
                 }}
               />
               <IconButton
-                bg={useColorModeValue('#f04e23', '#f04e23')}
+                bg={useColorModeValue('#000', '#000')}
                 color={useColorModeValue('white', 'gray.800')}
                 _hover={{
-                  bg: '#f04e2395',
+                  bg: '#000000',
                 }}
                 aria-label="Subscribe"
                 icon={<BiMailSend />}
@@ -165,29 +164,7 @@ export default function LargeWithLogoCentered() {
 
         </SimpleGrid>
       </Container>
-      <Box py={10}>
-        <Flex
-          align={'center'}
-          _before={{
-            content: '""',
-            borderBottom: '2px solid',
-            borderColor: useColorModeValue('gray.700', 'gray.700'),
-            flexGrow: 1,
-            mr: 8,
-          }}
-          _after={{
-            content: '""',
-            borderBottom: '2px solid',
-            borderColor: useColorModeValue('gray.700', 'gray.700'),
-            flexGrow: 1,
-            ml: 8,
-          }}>
-          <img alt='logo' style={{ width: 150 }} src={ Logo }  />
-        </Flex>
-        <Text pt={6} fontSize={'sm'} textAlign={'center'}>
-          © 2022 Wizkid. All rights reserved
-        </Text>
-      </Box>
+      
     </Box>
   );
 }
