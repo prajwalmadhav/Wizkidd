@@ -12,7 +12,7 @@ const PlayIcon = createIcon({
 export default function Features7() {
   return (
   <Flex
-  bg="#edf3f843"
+  bg="gray.200"
   _dark={{
     bg: "#3e3e3e",
   }}
@@ -32,6 +32,7 @@ export default function Features7() {
       px={8}
       py={20}
       mx="auto"
+      rounded="xl"
       
     >
       <SimpleGrid
@@ -72,7 +73,7 @@ export default function Features7() {
             }}
             textShadow="2px 0 currentcolor"
           >
-            Clear overview for efficient tracking
+            Video about doctor intro or inspirational video 
           </chakra.h2>
           <chakra.p
             mb={5}
@@ -167,7 +168,7 @@ export default function Features7() {
               md: "shorter",
             }}
           >
-            Decide how you integrate Payments
+            Video about Engineering intro or inspirational video
           </chakra.h2>
           <chakra.p
             mb={5}
