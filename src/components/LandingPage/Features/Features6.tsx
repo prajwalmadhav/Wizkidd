@@ -56,7 +56,7 @@ const Home = () => {
         
           <Box
             onClick={()=>{
-              navigate( "/home/courses/course1")
+              navigate( "/")
             }}
             w="360px"
             h="410px"
@@ -149,7 +149,7 @@ const Home = () => {
         {/* box 2 */}
         <Box
         onClick={()=>{
-          navigate( "/home/courses/course2")
+          navigate( "/")
         }}
             w="360px"
             h="410px"
@@ -244,7 +244,7 @@ const Home = () => {
           {/* box 3 */}
           <Box
           onClick={()=>{
-            navigate( "/home/courses/course3")
+            navigate( "/")
           }}
             w="360px"
             h="410px"
