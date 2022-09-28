@@ -1,139 +1,131 @@
 import {
   Box,
+  chakra,
   Container,
   Stack,
   Text,
   Image,
+  Flex,
   VStack,
   Button,
   Heading,
   SimpleGrid,
   StackDivider,
   useColorModeValue,
+  VisuallyHidden,
   List,
   ListItem,
   Divider,
 } from '@chakra-ui/react';
-import './buttoncss.min.css';
-export default function Simple() {
-  const courseTitle = 'Basics Of Programming'     //added editable variables
-  const courseSubscript = 'Beginner | 2 weeks | 4 Tests'
-  const courseDescription = 'This course is an introduction to the basic concepts of programming languages, with a strong emphasis on functional programming. This course is an introduction to the Python programming language for students without prior programming experience.'
+import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { MdLocalShipping } from 'react-icons/md';
 
-  
-  const courseObj1 = 'Python Data-Structures'
-  const courseObj2 = 'Objective 1'
-  const courseObj3 = 'Objective 2'
-  const courseObj4 = 'Objective 3'
-  const courseObj5 = 'Objective 4'
-  const courseObj6 = 'Objective 5'
 
-  const courseDetails1 = 'Detailed description of this detail lol 1'
-  const courseDetails2 = 'Less detailed desc lol'
-  const courseDetails3 = 'Detailed description of this detail lol 1'
-  const courseDetails4 = 'Less detailed desc lol'
-  
-  const courseImage = 'https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2021/11/TNW-Computer-Science-Expert.jpeg'
+import {
+ 
+  HStack,
+ 
+  ListIcon,
+ 
+} from '@chakra-ui/react';
+import { FaCheckCircle } from 'react-icons/fa';
 
+
+
+import {
+  Stat,
+  StatLabel,
+  StatNumber,
+} from '@chakra-ui/react';
+import { ReactNode } from 'react';
+import { BsPerson } from 'react-icons/bs';
+import { FiServer } from 'react-icons/fi';
+import { GoLocation } from 'react-icons/go';
+interface StatsCardProps {
+  title: string;
+  stat: string;
+  icon: ReactNode;
+}
+function StatsCard(props: StatsCardProps) {
+  const { title, stat, icon } = props;
   return (
-    
-    <Container maxW={'6xl'} ml = {{base:0, md: 20, lg: '290px' }} mt={{base:0, md: 20, lg:-10 }}>
-      {/* <Heading as='h2' size='2xl' 
-      ml = {{ base: '25px', md: 20, lg: '300px' }} 
-      mt = {{ base: 0, md: 20, lg: 3 }}
-      mb = {{ base: 0, md: 20, lg: '-50px' }} >
-         Course Catalog
-         
-      </Heading>
+    <Stat
+      px={{ base: 2, md: 4 }}
+      py={'5'}
+      shadow={'2xl'}
+      border={'1px solid'}
+      borderColor={useColorModeValue('gray.800', 'gray.500')}
+      rounded={'xl'}>
+      <Flex justifyContent={'space-between'}>
+        <Box pl={{ base: 2, md: 4 }}>
+          <StatLabel fontSize={'xl'} fontWeight={'large'} isTruncated>
+            {title}
+          </StatLabel>
+          <StatNumber fontSize={'4xl'} fontWeight={'medium'}>
+            {stat}
+          </StatNumber>
+        </Box>
+        <Box
+          my={'auto'}
+          color={useColorModeValue('gray.800', 'gray.200')}
+          alignContent={'center'}>
+          {icon}
+        </Box>
+      </Flex>
+    </Stat>
+  );
+}
 
-      <Divider orientation='horizontal' color={useColorModeValue('gray.300','gray.600')} mt={{base:2, md: 20, lg:'70px' }} ml={{base:7, md: 20, lg:'325px' }} w={{base:'250px', md: 20, lg:'298px' }}/> */}
-      
-      <Heading as='h2' size='xl' 
-      ml = {{ base: '5px', md: 20, lg: '20px' }}
-      mt = {{ base: '15px', lg: '55px'}}
-      mb = {{ base: 0, md: 20, lg: '-50px' }} >
-         |Courses Catalog
-      </Heading>
+function PriceWrapper({ children }: { children: ReactNode }) {
+  return (
+    <Box
+      mb={4}
+      shadow="base"
+      borderWidth="1px"
+      alignSelf={{ base: 'center', lg: 'flex-start' }}
+      borderColor={useColorModeValue('gray.200', 'gray.500')}
+      borderRadius={'xl'}>
+      {children}
+    </Box>
+  );
+}
 
+export default function Simple() {
+  return (
+    <Container maxW={'6xl'} ml={{lg:'20%'}}>
+      <Heading as='h2' size='xl' noOfLines={1} mt={{lg:10}} pb={{lg:1}} textAlign='left'>
+        Heading can be added here
+      </Heading>
       <SimpleGrid
-        columns={{ base: 1, lg: 2 }}
+        columns={{ base: 1, lg: 1 }}
         spacing={{ base: 8, md: 10 }}
-        py={{ base: 18, md: 24 }}>
-        <Stack>
+        py={{ base: 18, md: 24 ,lg:10 }}>
+        <Flex>
           <Image
             rounded={'md'}
             alt={'product image'}
-            src={courseImage}
-            // transform="scale(1.0)"
-            // objectFit="contain"
-            // transition="0.3s ease-in-out"
-            // _hover={{
-            //   transform: 'scale(1.05)',
-            // }}
+            src={
+              'https://images.unsplash.com/photo-1596516109370-29001ec8ec36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyODE1MDl8MHwxfGFsbHx8fHx8fHx8fDE2Mzg5MzY2MzE&ixlib=rb-1.2.1&q=80&w=1080'
+            }
+            fit={'cover'}
             align={'center'}
             w={'100%'}
-            h={{ base: '100%', sm: '400px', lg: '450px' }}
-            mb={{ base: 2, sm: 2, lg: '65px' }}
+            h={{ base: '100%', sm: '400px', lg: '500px' }}
           />
-        <a href="/pres1">
-          <Button
-          className="Learning-button-mob"
-            rounded={'lg'}
-            // w={'full'}
-            mt={8}
-            size={'lg'}
-            py={'7'}
-            w={{ base: 0, sm: 0, lg: '100%' }}
-            h={{ base: -5, sm: 0, lg: 0 }}
-            bg={useColorModeValue('gray.900', 'gray.50')}
-            color={useColorModeValue('white', 'gray.900')}
-            textTransform={'uppercase'}
-            _hover={{
-              transform: 'translateY(3px)',
-              boxShadow: 'lg',
-            }}>
-           Start Learning
-          </Button>
-          </a>  
-          <a href="/tests">
-            <Button
-            className="Learning-button-mob"
-              rounded={'lg'}
-              // w={'full'}
-              mt={8}
-              size={'lg'}
-              py={'7'}
-              w={{ base: 0, sm: 0, lg: '100%' }}
-              h={{ base: -5, sm: 0, lg: 0 }}
-              bg={useColorModeValue('gray.100', 'gray.50')}
-              color={useColorModeValue('black', 'gray.900')}
-              
-              borderColor={useColorModeValue('black', 'gray.900')}
-              textTransform={'uppercase'}
-              _hover={{
-                transform: 'translateY(3px)',
-                boxShadow: 'lg',
-              }}>
-            Take Test
-            
-            </Button>
-          </a>
-        </Stack>
-
+        </Flex>
         <Stack spacing={{ base: 6, md: 10 }}>
           <Box as={'header'}>
             <Heading
               lineHeight={1.1}
               fontWeight={600}
               fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
-              {courseTitle}
+              Video title
             </Heading>
             <Text
               color={useColorModeValue('gray.900', 'gray.400')}
               fontWeight={300}
-              fontSize={{ base: '1xl', sm: '2xl', lg: '2xl' }}
-              ml = {{base:0, md: 20, lg: 2 }}>
-              {courseSubscript}
+              fontSize={'2xl'}>
+              SUBSCRIPT 
             </Text>
           </Box>
 
@@ -142,152 +134,39 @@ export default function Simple() {
             direction={'column'}
             divider={
               <StackDivider
-                borderColor={useColorModeValue('gray.400', 'gray.600')}
+                borderColor={useColorModeValue('gray.200', 'gray.600')}
               />
             }>
-            <VStack spacing={{ base: 4, sm: 6 }}>
-              <Text
-                color={useColorModeValue('gray.900', 'gray.400')}
-                fontSize={'2xl'}
-                textAlign='justify'
-                fontWeight={'300'}>
-                {courseDescription}
-              </Text>
-              <Text fontSize={'lg'}>
-                {/* MORE DESCRIPTION  */}
-                
-              </Text>
-
-              <Button
-              className="Learning-button-pc"
-            rounded={'lg'}
-            // w={'full'}
-            mt={8}
-            size={'lg'}
-            py={'7'}
-            w={{ base: 'full', sm: 0, lg: '100%' }}
-            // h={{ base: 0, sm: 0, lg: 'full' }}
-            bg={useColorModeValue('gray.900', 'gray.50')}
-            color={useColorModeValue('white', 'gray.900')}
-            textTransform={'uppercase'}
-            _hover={{
-              transform: 'translateY(3px)',
-              boxShadow: 'lg',
-            }}>
-           Start Learning
-          </Button>
-
-          <Button
-          className="Learning-button-pc"
-            rounded={'lg'}
-            // w={'full'}
-            mt={8}
-            size={'lg'}
-            py={'7'}
-            w={{ base: 'full', sm: 0, lg: '100%' }}
-            h={{ base: 0, sm: 0, lg: 0 }}
-            bg={useColorModeValue('gray.100', 'gray.50')}
-            color={useColorModeValue('black', 'gray.900')}
+                <VStack spacing={{ base: 4, sm: 6 }}>
+                  <Text
+                    color={useColorModeValue('gray.500', 'gray.400')}
+                    fontSize={'2xl'}
+                    fontWeight={'300'}>
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                    diam nonumy eirmod tempor invidunt ut labore Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                    diam nonumy eirmod tempor invidunt ut labore
+                  </Text>
+                  <Text fontSize={'lg'}>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
+                    aliquid amet at delectus doloribus dolorum expedita hic, ipsum
+                    maxime modi nam officiis porro, quae, quisquam quos
+                    reprehenderit velit? Natus, totam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
+                    aliquid amet at delectus doloribus dolorum expedita hic, ipsum
+                    maxime modi nam officiis porro, quae, quisquam quos
+                    reprehenderit velit? Natus, totam.
+                  </Text>
+                </VStack>
+              
             
-            borderColor={useColorModeValue('black', 'gray.900')}
-            textTransform={'uppercase'}
-            _hover={{
-              transform: 'translateY(3px)',
-              boxShadow: 'lg',
-            }}>
-           Take Test
-          </Button>
-            </VStack>
-            <Box>
-              <Text
-                fontSize={{ base: '16px', lg: '18px' }}
-                color={useColorModeValue('#080f7b', 'yellow.300')}
-                fontWeight={'500'}
-                textTransform={'uppercase'}
-                mb={'4'}>
-                COURSE objectives
-              </Text>
-
-              <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
-                <List spacing={2}>
-                  <ListItem>{courseObj1}</ListItem>
-                  <ListItem>{courseObj2}</ListItem>{' '}
-                  <ListItem>{courseObj3}</ListItem>
-                </List>
-                <List spacing={2}>
-                  <ListItem>{courseObj4}</ListItem>
-                  <ListItem>{courseObj5}</ListItem>
-                  <ListItem>{courseObj6}</ListItem>
-                </List>
-              </SimpleGrid>
-            </Box>
-            <Box>
-              <Text
-                fontSize={{ base: '16px', lg: '18px' }}
-                color={useColorModeValue('#080f7b', 'yellow.300')}
-                fontWeight={'500'}
-                textTransform={'uppercase'}
-                mb={'4'}>
-                COURSE DETAILS
-              </Text>
-
-              <List spacing={2}>
-                <ListItem>
-                  <Text as={'span'} fontWeight={'bold'}>
-                    Detail 1:
-                  </Text>{' '}
-                  {courseDetails1}
-                </ListItem>
-                <ListItem>
-                  <Text as={'span'} fontWeight={'bold'}>
-                    Detail 2:
-                  </Text>{' '}
-                  {courseDetails2}
-                </ListItem>
-                <ListItem>
-                  <Text as={'span'} fontWeight={'bold'}>
-                    Detail 3:
-                  </Text>{' '}
-                  {courseDetails3}                  
-                </ListItem>
-                <ListItem>
-                  <Text as={'span'} fontWeight={'bold'}>
-                    Detail 4:
-                  </Text>{' '}
-                  {courseDetails4}
-                </ListItem>
-                
-              </List>
-            </Box>
           </Stack>
 
-          {/* <Button
-            rounded={'lg'}
-            // w={'full'}
-            mt={8}
-            size={'lg'}
-            py={'7'}
-            w={{ base: '100%', sm: 0, lg: 0 }}
-            
-            bg={useColorModeValue('gray.900', 'gray.50')}
-            color={useColorModeValue('white', 'gray.900')}
-            textTransform={'uppercase'}
-            _hover={{
-              transform: 'translateY(3px)',
-              boxShadow: 'lg',
-            }}>
-           Start Learning
-          </Button> */}
+          
 
-        
+          
         </Stack>
       </SimpleGrid>
 
-      <Divider orientation='horizontal' color={useColorModeValue('black', 'gray.600')} ml='0px' mb='10px'/>
-      
-      <Divider className="divider"orientation='horizontal' color={useColorModeValue('black', 'gray.600')} ml='0px'/>
-
+      <Divider ml={{lg:'0'}} width={{lg:'1110px' }}/>
     </Container>
-    
   );
 }
