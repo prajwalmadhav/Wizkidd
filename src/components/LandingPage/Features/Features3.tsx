@@ -18,6 +18,7 @@ export default function Fgl() {
           w={8}
           h={8}
           mb={4}
+          mt={{lg:'134px'}}
           rounded="full"
           color={useColorModeValue(`black`, `${props.color}.100`)}
           bg={useColorModeValue(`${props.color}`, `${props.color}.600`)}
