@@ -1,1244 +1,395 @@
-import React from "react";
 import {
-  chakra,
   Box,
+  chakra,
+  Container,
+  Stack,
+  Text,
   Image,
   Flex,
-  useColorModeValue,
-  Link,
-  Icon,
   VStack,
-  SimpleGrid,
+  Button,
   Heading,
-  Divider,
-  Stack,
-  Center,
-} from "@chakra-ui/react";
+  SimpleGrid,
+  StackDivider,
+  useColorModeValue,
+  VisuallyHidden,
+  List,
+  ListItem,
+} from '@chakra-ui/react';
+import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { MdLocalShipping } from 'react-icons/md';
 
 
-import { useNavigate } from "react-router-dom"
-import { FaRegBookmark, FaRegClock } from "react-icons/fa";
-import {BsFillAwardFill} from "react-icons/bs";
+import {
+ 
+  HStack,
+ 
+  ListIcon,
+ 
+} from '@chakra-ui/react';
+import { FaCheckCircle } from 'react-icons/fa';
 
-const Home = () => {
-  const CourseImage1 = "https://miro.medium.com/max/875/0*IkBprj2jlkh4H_qO.png"
-  const CourseImage2 = " https://miro.medium.com/max/875/0*emfQ_cKXSeCdPgb9.jpg"
-  const CourseImage3 = " https://miro.medium.com/max/875/0*D9HAiv-jW-9kC76O.jpg"
-  const CourseImage4 = "https://miro.medium.com/max/875/0*lrHnHevmk9JPrH86.jpg"
-  const CourseImage5 = "https://miro.medium.com/max/875/0*OIp556t9Xtn3Sb7w.jpg"
-  const CourseImage6 = "https://miro.medium.com/max/875/0*iO57Y2-H8kwVqW4n.jpg"
-  const TestImage1 = "https://img.freepik.com/free-vector/recruit-agent-analyzing-candidates_74855-4565.jpg?t=st=1648559281~exp=1648559881~hmac=abfbe49f621ebbf67c5877aa964e89748991faea38bd8f954e23a6812c371d2e&w=1060 "
-  const TestImage2 = " https://img.freepik.com/free-vector/software-code-testing-concept-illustration_114360-8194.jpg?t=st=1648559431~exp=1648560031~hmac=6a0fa9210d2e34a6975fb61186aa671c8da9e9657df3e6b4890cbcf8205697fc&w=996"
-  const TestImage3 = "https://img.freepik.com/free-vector/software-tester-concept-application-website-code-testing_277904-17513.jpg?w=996"
-  const TestImage4 = " https://img.freepik.com/free-vector/digital-designers-team-drawing-with-pen-computer-monitor_74855-10586.jpg?t=st=1648559309~exp=1648559909~hmac=e8c211e489d696b5ce33e048f3b8dd6e1c25557f0d291bcc5f2eb8523fd9d6d5&w=996"
-  const TestImage5 = "https://img.freepik.com/free-vector/web-development-programmer-engineering-coding-website-augmented-reality-interface-screens-developer-project-engineer-programming-software-application-design-cartoon-illustration_107791-3863.jpg?t=st=1648559233~exp=1648559833~hmac=4cc43979793175bbb32dc4370561743043be7f04d36517d281bba8847c8d9ce3&w=996"
-  const TestImage6 = "https://img.freepik.com/free-vector/mobile-testing-concept-illustration_114360-2449.jpg?w=740 "
-  const navigate = useNavigate()
+
+
+import {
+  Stat,
+  StatLabel,
+  StatNumber,
+} from '@chakra-ui/react';
+import { ReactNode } from 'react';
+import { BsPerson } from 'react-icons/bs';
+import { FiServer } from 'react-icons/fi';
+import { GoLocation } from 'react-icons/go';
+interface StatsCardProps {
+  title: string;
+  stat: string;
+  icon: ReactNode;
+}
+function StatsCard(props: StatsCardProps) {
+  const { title, stat, icon } = props;
   return (
-    <>      
-      
-      {/* All cards */} 
-      <Heading as='h2' size='xl' 
-      ml = {{ base: '25px', md: 20, lg: '300px' }}
-      mt = {{ base: '15px'}} >
-         |My Courses
-      </Heading> 
-      <br/>
-      
-      
-      
-      
-      {/* course cards row 1 */}
-      <Flex
-      ml = {{ base: 0, md: 20, lg: '18%' }}
-      mx = {{ base: 1 }}
-      // my = {{ base : 0, lg : 10 }}
-      justifyContent = {{ base: "", lg: "center" }}
-      px = {4}
-      direction={{ base: "column", md: "column", lg: "row" }}
-      py = {{ base: 4, md: 4, lg: 4 }}
-      
-      >   
-        {/* box 1 */}
-        
-          <Box
-            onClick={()=>{
-              navigate( "/home/courses/course1")
-            }}
-            w="360px"
-            h="410px"
-            mr="50px"
-            mb="35px"
-            bg={useColorModeValue("white", "gray.800")}
-            shadow="2xl"
-            rounded="lg"
-            overflow="hidden"
-            
-            transform="scale(1.0)"
-            objectFit="contain"
-            transition="0.3s ease-in-out"
-            _hover={{
-              transform: 'scale(1.09)',
-            }}
-
-          >
-            <Image
-              w="full"
-              h={40}
-              fit="cover"
-              objectPosition="center"
-              src={CourseImage1}
-              alt="avatar"
-            />
-
-            <Flex alignItems="center" px={6} py={3} bg="gray.900">
-              <Icon as={FaRegBookmark} h={6} w={6} color="white" />
-
-              <chakra.h1 mx={3} color="white" fontWeight="bold" fontSize="lg">
-                Basics of Programming 
-              </chakra.h1>
-            </Flex>
-
-            <Box py={4} px={6}>
-              <chakra.h1
-                fontSize="xl"
-                fontWeight="bold"
-                color={useColorModeValue("gray.800", "white")}
-              >
-                
-              </chakra.h1>
-
-              <chakra.p py={2} color={useColorModeValue("gray.700", "gray.400")} textAlign='justify'>
-              Gives an overview of the vast world of programming, and explains the key concepts in detail.
-              </chakra.p>
-
-              
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  <Icon
-                    as={FaRegClock}
-                    
-                    h={6}
-                    w={6}
-                    mr={2}
-                  />
-
-                  <chakra.h1 px={2} fontSize="sm">
-                  4 Weeks 
-                  </chakra.h1>
-                </Flex>
-
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  <Icon as={BsFillAwardFill} h={6} w={6} mr={2} />
-
-                  <chakra.h1 px={2} fontSize="sm">
-                  Beginner Level
-                  </chakra.h1>
-                </Flex>
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  
-                </Flex>
-              
-            </Box>
-          </Box>
-        
-        {/* box 2 */}
-        <Box
-        onClick={()=>{
-          navigate( "/home/courses/course2")
-        }}
-            w="360px"
-            h="410px"
-            mr="50px"
-            mb="35px"
-            bg={useColorModeValue("white", "gray.800")}
-            shadow="2xl"
-            rounded="lg"
-            overflow="hidden"
-            
-            transform="scale(1.0)"
-            objectFit="contain"
-            transition="0.3s ease-in-out"
-            _hover={{
-              transform: 'scale(1.09)',
-            }}
-            
-
-          >
-            <Image
-              w="full"
-              h={40}
-              fit="cover"
-              objectPosition="center"
-              src={CourseImage2}
-              alt="avatar"
-            />
-
-            <Flex alignItems="center" px={6} py={3} bg="gray.900">
-              <Icon as={FaRegBookmark} h={6} w={6} color="white" />
-
-              <chakra.h1 mx={3} color="white" fontWeight="bold" fontSize="lg">
-              Programming Language Implementation  
-              </chakra.h1>
-            </Flex>
-
-            <Box py={4} px={6}>
-              <chakra.h1
-                fontSize="xl"
-                fontWeight="bold"
-                color={useColorModeValue("gray.800", "white")}
-              >
-                
-              </chakra.h1>
-
-              <chakra.p py={2} color={useColorModeValue("gray.700", "gray.400")} textAlign='justify'>
-              Key concepts regarding Implementation are discussed along with useful examples to start your programming journey!
-              </chakra.p>
-
-              
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  <Icon
-                    as={FaRegClock}
-                    
-                    h={6}
-                    w={6}
-                    mr={2}
-                  />
-
-                  <chakra.h1 px={2} fontSize="sm">
-                  4 Weeks 
-                  </chakra.h1>
-                </Flex>
-
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  <Icon as={BsFillAwardFill} h={6} w={6} mr={2} />
-
-                  <chakra.h1 px={2} fontSize="sm">
-                  Intermediate Level
-                  </chakra.h1>
-                </Flex>
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  
-                </Flex>
-              
-            </Box>
-          </Box>
-          
-
-          {/* box 3 */}
-          <Box
-          onClick={()=>{
-            navigate( "/home/courses/course3")
-          }}
-            w="360px"
-            h="410px"
-            mr="50px"
-            mb="35px"
-            bg={useColorModeValue("white", "gray.800")}
-            shadow="2xl"
-            rounded="lg"
-            overflow="hidden"
-            
-            transform="scale(1.0)"
-            objectFit="contain"
-            transition="0.3s ease-in-out"
-            _hover={{
-              transform: 'scale(1.09)',
-            }}
-
-          >
-            <Image
-              w="full"
-              h={40}
-              fit="cover"
-              objectPosition="center"
-              src={CourseImage3}
-              alt="avatar"
-            />
-
-            <Flex alignItems="center" px={6} py={3} bg="gray.900">
-              <Icon as={FaRegBookmark} h={6} w={6} color="white" />
-
-              <chakra.h1 mx={3} color="white" fontWeight="bold" fontSize="lg">
-              Exception handling  
-              </chakra.h1>
-            </Flex>
-
-            <Box py={4} px={6}>
-              <chakra.h1
-                fontSize="xl"
-                fontWeight="bold"
-                color={useColorModeValue("gray.800", "white")}
-              >
-                
-              </chakra.h1>
-
-              <chakra.p py={2} color={useColorModeValue("gray.700", "gray.400")} textAlign='justify'>
-              The module explains the process of handling exceptions and the methods used for this purpose.
-              </chakra.p>
-
-              
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  <Icon
-                    as={FaRegClock}
-                    
-                    h={6}
-                    w={6}
-                    mr={2}
-                  />
-
-                  <chakra.h1 px={2} fontSize="sm">
-                  4 Weeks 
-                  </chakra.h1>
-                </Flex>
-
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  <Icon as={BsFillAwardFill} h={6} w={6} mr={2} />
-
-                  <chakra.h1 px={2} fontSize="sm">
-                  Beginner Level
-                  </chakra.h1>
-                </Flex>
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  
-                </Flex>
-              
-            </Box>
-          </Box>
-          
-
-      </Flex>
-
-      {/* course cards row 2 */}
-
-      <Flex
-      ml = {{ base: 0, md: 20, lg: '18%' }}
-      mx = {{ base: 1 }}
-      justifyContent = {{ base: "", lg: "center" }}
-      px = {4}
-      direction={{ base: "column", md: "column", lg: "row" }}
-      py = {{ base: 4, md: 4, lg: 4 }}
-      >   
-        {/* box 1 */}
-            
-          <Box
-          onClick={()=>{
-            navigate( "/home/courses/course4")
-          }}
-            w="360px"
-            h="410px"
-            mr="50px"
-            mb="35px"
-            bg={useColorModeValue("white", "gray.800")}
-            shadow="2xl"
-            rounded="lg"
-            overflow="hidden"
-            
-            transform="scale(1.0)"
-            objectFit="contain"
-            transition="0.3s ease-in-out"
-            _hover={{
-              transform: 'scale(1.09)',
-            }}
-
-          >
-            <Image
-              w="full"
-              h={40}
-              fit="cover"
-              objectPosition="center"
-              src={CourseImage4}
-              alt="avatar"
-            />
-
-            <Flex alignItems="center" px={6} py={3} bg="gray.900">
-              <Icon as={FaRegBookmark} h={6} w={6} color="white" />
-
-              <chakra.h1 mx={3} color="white" fontWeight="bold" fontSize="lg">
-              Introduction to User-Defined Functions  
-              </chakra.h1>
-            </Flex>
-
-            <Box py={4} px={6}>
-              <chakra.h1
-                fontSize="xl"
-                fontWeight="bold"
-                color={useColorModeValue("gray.800", "white")}
-              >
-                
-              </chakra.h1>
-
-              <chakra.p py={2} color={useColorModeValue("gray.700", "gray.400")} textAlign='justify'>
-              The module is designed to understand user-defined functions and their usage.
-              </chakra.p>
-
-              
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  <Icon
-                    as={FaRegClock}
-                    
-                    h={6}
-                    w={6}
-                    mr={2}
-                  />
-
-                  <chakra.h1 px={2} fontSize="sm">
-                  4 Weeks 
-                  </chakra.h1>
-                </Flex>
-
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  <Icon as={BsFillAwardFill} h={6} w={6} mr={2} />
-
-                  <chakra.h1 px={2} fontSize="sm">
-                  Intermediate Level
-                  </chakra.h1>
-                </Flex>
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  
-                </Flex>
-              
-            </Box>
-          </Box>
-        
-        {/* box 2 */}
-        <Box
-        onClick={()=>{
-          navigate( "/home/courses/course5")
-        }}
-            w="360px"
-            h="410px"
-            mr="50px"
-            mb="35px"
-            bg={useColorModeValue("white", "gray.800")}
-            shadow="2xl"
-            rounded="lg"
-            overflow="hidden"
-            
-            transform="scale(1.0)"
-            objectFit="contain"
-            transition="0.3s ease-in-out"
-            _hover={{
-              transform: 'scale(1.09)',
-            }}
-
-          >
-            <Image
-              w="full"
-              h={40}
-              fit="cover"
-              objectPosition="center"
-              src={CourseImage5}
-              alt="avatar"
-            />
-
-            <Flex alignItems="center" px={6} py={3} bg="gray.900">
-              <Icon as={FaRegBookmark} h={6} w={6} color="white" />
-
-              <chakra.h1 mx={3} color="white" fontWeight="bold" fontSize="lg">
-              Object-Oriented Programming  
-              </chakra.h1>
-            </Flex>
-
-            <Box py={4} px={6}>
-              <chakra.h1
-                fontSize="xl"
-                fontWeight="bold"
-                color={useColorModeValue("gray.800", "white")}
-              >
-                
-              </chakra.h1>
-
-              <chakra.p py={2} color={useColorModeValue("gray.700", "gray.400")} textAlign='justify'>
-              This module introduces objects, classes, and other important structures of object-oriented programming.
-              </chakra.p>
-
-              
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  <Icon
-                    as={FaRegClock}
-                    
-                    h={6}
-                    w={6}
-                    mr={2}
-                  />
-
-                  <chakra.h1 px={2} fontSize="sm">
-                  4 Weeks 
-                  </chakra.h1>
-                </Flex>
-
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  <Icon as={BsFillAwardFill} h={6} w={6} mr={2} />
-
-                  <chakra.h1 px={2} fontSize="sm">
-                  Advance Level
-                  </chakra.h1>
-                </Flex>
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  
-                </Flex>
-              
-            </Box>
+    <Stat
+      px={{ base: 2, md: 4 }}
+      py={'5'}
+      shadow={'2xl'}
+      border={'1px solid'}
+      borderColor={useColorModeValue('gray.800', 'gray.500')}
+      rounded={'xl'}>
+      <Flex justifyContent={'space-between'}>
+        <Box pl={{ base: 2, md: 4 }}>
+          <StatLabel fontSize={'xl'} fontWeight={'large'} isTruncated>
+            {title}
+          </StatLabel>
+          <StatNumber fontSize={'4xl'} fontWeight={'medium'}>
+            {stat}
+          </StatNumber>
         </Box>
-          
-
-          {/* box 3 */}
-          <Box
-          onClick={()=>{
-            navigate( "/home/courses/course6")
-          }}
-            w="360px"
-            h="410px"
-            mr="50px"
-            mb="35px"
-            bg={useColorModeValue("white", "gray.800")}
-            shadow="2xl"
-            rounded="lg"
-            overflow="hidden"
-            
-            transform="scale(1.0)"
-            objectFit="contain"
-            transition="0.3s ease-in-out"
-            _hover={{
-              transform: 'scale(1.09)',
-            }}
-
-          >
-            <Image
-              w="full"
-              h={40}
-              fit="cover"
-              objectPosition="center"
-              src={CourseImage6}
-              alt="avatar"
-            />
-
-            <Flex alignItems="center" px={6} py={3} bg="gray.900">
-              <Icon as={FaRegBookmark} h={6} w={6} color="white" />
-
-              <chakra.h1 mx={3} color="white" fontWeight="bold" fontSize="lg">
-              Constructors & Destructors  
-              </chakra.h1>
-            </Flex>
-
-            <Box py={4} px={6}>
-              <chakra.h1
-                fontSize="xl"
-                fontWeight="bold"
-                color={useColorModeValue("gray.800", "white")}
-              >
-                
-              </chakra.h1>
-
-              <chakra.p py={2} color={useColorModeValue("gray.700", "gray.400")} textAlign='justify'>
-              Describes the different types of constructors, and destructors, and shows how they are to be implemented.
-              </chakra.p>
-
-              
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  <Icon
-                    as={FaRegClock}
-                    
-                    h={6}
-                    w={6}
-                    mr={2}
-                  />
-
-                  <chakra.h1 px={2} fontSize="sm">
-                  4 Weeks 
-                  </chakra.h1>
-                </Flex>
-
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  <Icon as={BsFillAwardFill} h={6} w={6} mr={2} />
-
-                  <chakra.h1 px={2} fontSize="sm">
-                  Advance Level
-                  </chakra.h1>
-                </Flex>
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  
-                </Flex>
-              
-            </Box>
-          </Box>
-          
-
-      </Flex>
-
-      
-      <Heading as='h2' size='xl' ml =  {{base:'25px', md: 20, lg: '300px' }} >
-          |My Tests
-      </Heading> 
-      <br/>
-      {/* <Divider orientation='horizontal' ml='280px'/> */}
-
-      {/* test cards row 3 */}
-      <Flex
-      ml = {{ base: 0, md: 20, lg: '18%' }}
-      mx = {{ base: 1 }}
-      // my = {{ base : 0, lg : 10 }}
-      justifyContent = {{ base: "", lg: "center" }}
-      px = {4}
-      direction={{ base: "column", md: "column", lg: "row" }}
-      py = {{ base: 4, md: 4, lg: 4 }}
-      >   
-        {/* box 1 */}
-        
-          <Box
-          onClick={()=>{
-            navigate( "/tests")
-          }}
-            w="360px"
-            h="410px"
-            mr="50px"
-            mb="35px"
-            bg={useColorModeValue("white", "gray.800")}
-            shadow="2xl"
-            rounded="lg"
-            overflow="hidden"
-            
-            transform="scale(1.0)"
-            objectFit="contain"
-            transition="0.3s ease-in-out"
-            _hover={{
-              transform: 'scale(1.09)',
-            }}
-
-          >
-            <Image
-              w="full"
-              h={40}
-              fit="cover"
-              objectPosition="center"
-              src={TestImage1}
-              alt="avatar"
-            />
-
-            <Flex alignItems="center" px={6} py={3} bg="gray.900">
-              <Icon as={FaRegBookmark} h={6} w={6} color="white" />
-
-              <chakra.h1 mx={3} color="white" fontWeight="bold" fontSize="lg">
-              Class Functions 
-              </chakra.h1>
-            </Flex>
-
-            <Box py={4} px={6}>
-              <chakra.h1
-                fontSize="xl"
-                fontWeight="bold"
-                color={useColorModeValue("gray.800", "white")}
-              >
-                
-              </chakra.h1>
-
-              <chakra.p py={2} color={useColorModeValue("gray.700", "gray.400")} textAlign='justify'>
-              Tests the knowledge of Constructors & Destructors, their types, and applications. 
-              </chakra.p>
-
-              
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  <Icon
-                    as={FaRegClock}
-                    
-                    h={6}
-                    w={6}
-                    mr={2}
-                  />
-
-                  <chakra.h1 px={2} fontSize="sm">
-                  4 Weeks 
-                  </chakra.h1>
-                </Flex>
-
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  <Icon as={BsFillAwardFill} h={6} w={6} mr={2} />
-
-                  <chakra.h1 px={2} fontSize="sm">
-                  difficulty level
-                  </chakra.h1>
-                </Flex>
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  
-                </Flex>
-              
-            </Box>
-          </Box>
-        
-        {/* box 2 */}
         <Box
-        
-            onClick={()=>{
-              navigate( "/tests")
-            }}
-            w="360px"
-            h="410px"
-            mr="50px"
-            mb="35px"
-            bg={useColorModeValue("white", "gray.800")}
-            shadow="2xl"
-            rounded="lg"
-            overflow="hidden"
-            
-            transform="scale(1.0)"
-            objectFit="contain"
-            transition="0.3s ease-in-out"
-            _hover={{
-              transform: 'scale(1.09)',
-            }}
-
-          >
-            <Image
-              w="full"
-              h={40}
-              fit="cover"
-              objectPosition="center"
-              src={TestImage2}
-              alt="avatar"
-            />
-
-            <Flex alignItems="center" px={6} py={3} bg="gray.900">
-              <Icon as={FaRegBookmark} h={6} w={6} color="white" />
-
-              <chakra.h1 mx={3} color="white" fontWeight="bold" fontSize="lg">
-              Exception handling 
-              </chakra.h1>
-            </Flex>
-
-            <Box py={4} px={6}>
-              <chakra.h1
-                fontSize="xl"
-                fontWeight="bold"
-                color={useColorModeValue("gray.800", "white")}
-              >
-                
-              </chakra.h1>
-
-              <chakra.p py={2} color={useColorModeValue("gray.700", "gray.400")} textAlign='justify'>
-              Code snippets are used to test the understanding of Exception handling.
-              </chakra.p>
-
-              
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  <Icon
-                    as={FaRegClock}
-                    
-                    h={6}
-                    w={6}
-                    mr={2}
-                  />
-
-                  <chakra.h1 px={2} fontSize="sm">
-                  4 Weeks 
-                  </chakra.h1>
-                </Flex>
-
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  <Icon as={BsFillAwardFill} h={6} w={6} mr={2} />
-
-                  <chakra.h1 px={2} fontSize="sm">
-                  difficulty level
-                  </chakra.h1>
-                </Flex>
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  
-                </Flex>
-              
-            </Box>
-          </Box>
-          
-
-          {/* box 3 */}
-          <Box
-              onClick={()=>{
-                navigate( "/tests")
-              }}
-            w="360px"
-            h="410px"
-            mr="50px"
-            mb="35px"
-            bg={useColorModeValue("white", "gray.800")}
-            shadow="2xl"
-            rounded="lg"
-            overflow="hidden"
-            
-            transform="scale(1.0)"
-            objectFit="contain"
-            transition="0.3s ease-in-out"
-            _hover={{
-              transform: 'scale(1.09)',
-            }}
-
-          >
-            <Image
-              w="full"
-              h={40}
-              fit="cover"
-              objectPosition="center"
-              src={TestImage3}
-              alt="avatar"
-            />
-
-            <Flex alignItems="center" px={6} py={3} bg="gray.900">
-              <Icon as={FaRegBookmark} h={6} w={6} color="white" />
-
-              <chakra.h1 mx={3} color="white" fontWeight="bold" fontSize="lg">
-              Object-Oriented Programming 
-              </chakra.h1>
-            </Flex>
-
-            <Box py={4} px={6}>
-              <chakra.h1
-                fontSize="xl"
-                fontWeight="bold"
-                color={useColorModeValue("gray.800", "white")}
-              >
-                
-              </chakra.h1>
-
-              <chakra.p py={2} color={useColorModeValue("gray.700", "gray.400")} textAlign='justify'>
-              Tests the understanding of key OOPS concepts and their implementation.
-              </chakra.p>
-
-              
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  <Icon
-                    as={FaRegClock}
-                    
-                    h={6}
-                    w={6}
-                    mr={2}
-                  />
-
-                  <chakra.h1 px={2} fontSize="sm">
-                  4 Weeks 
-                  </chakra.h1>
-                </Flex>
-
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  <Icon as={BsFillAwardFill} h={6} w={6} mr={2} />
-
-                  <chakra.h1 px={2} fontSize="sm">
-                  difficulty level
-                  </chakra.h1>
-                </Flex>
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  
-                </Flex>
-              
-            </Box>
-          </Box>
-          
-
+          my={'auto'}
+          color={useColorModeValue('gray.800', 'gray.200')}
+          alignContent={'center'}>
+          {icon}
+        </Box>
       </Flex>
-
-      {/* course cards row 4 */}
-      <Flex
-      ml = {{ base: 0, md: 20, lg: '18%' }}
-      mx = {{ base: 1 }}
-      // my = {{ base : 0, lg : 10 }}
-      justifyContent = {{ base: "", lg: "center" }}
-      px = {4}
-      direction={{ base: "column", md: "column", lg: "row" }}
-      py = {{ base: 4, md: 4, lg: 4 }}
-      >   
-        {/* box 1 */}
-        
-          <Box
-          onClick={()=>{
-            navigate( "/tests")
-          }}
-            w="360px"
-            h="410px"
-            mr="50px"
-            mb="35px"
-            bg={useColorModeValue("white", "gray.800")}
-            shadow="2xl"
-            rounded="lg"
-            overflow="hidden"
-            
-            transform="scale(1.0)"
-            objectFit="contain"
-            transition="0.3s ease-in-out"
-            _hover={{
-              transform: 'scale(1.09)',
-            }}
-
-          >
-            <Image
-              w="full"
-              h={40}
-              fit="cover"
-              objectPosition="center"
-              src={TestImage4}
-              alt="avatar"
-            />
-
-            <Flex alignItems="center" px={6} py={3} bg="gray.900">
-              <Icon as={FaRegBookmark} h={6} w={6} color="white" />
-
-              <chakra.h1 mx={3} color="white" fontWeight="bold" fontSize="lg">
-              User-Defined Functions  
-              </chakra.h1>
-            </Flex>
-
-            <Box py={4} px={6}>
-              <chakra.h1
-                fontSize="xl"
-                fontWeight="bold"
-                color={useColorModeValue("gray.800", "white")}
-              >
-                
-              </chakra.h1>
-
-              <chakra.p py={2} color={useColorModeValue("gray.700", "gray.400")} textAlign='justify'>
-              Tests the knowledge of writing user-defined functions and the error detection in said functions. 
-              </chakra.p>
-
-              
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  <Icon
-                    as={FaRegClock}
-                    
-                    h={6}
-                    w={6}
-                    mr={2}
-                  />
-
-                  <chakra.h1 px={2} fontSize="sm">
-                  4 Weeks 
-                  </chakra.h1>
-                </Flex>
-
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  <Icon as={BsFillAwardFill} h={6} w={6} mr={2} />
-
-                  <chakra.h1 px={2} fontSize="sm">
-                  difficulty level
-                  </chakra.h1>
-                </Flex>
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  
-                </Flex>
-              
-            </Box>
-          </Box>
-        
-        {/* box 2 */}
-        <Box
-        onClick={()=>{
-          navigate( "/tests")
-        }}
-            w="360px"
-            h="410px"
-            mr="50px"
-            mb="35px"
-            bg={useColorModeValue("white", "gray.800")}
-            shadow="2xl"
-            rounded="lg"
-            overflow="hidden"
-            
-            transform="scale(1.0)"
-            objectFit="contain"
-            transition="0.3s ease-in-out"
-            _hover={{
-              transform: 'scale(1.09)',
-            }}
-
-          >
-            <Image
-              w="full"
-              h={40}
-              fit="cover"
-              objectPosition="center"
-              src={TestImage5}
-              alt="avatar"
-            />
-
-            <Flex alignItems="center" px={6} py={3} bg="gray.900">
-              <Icon as={FaRegBookmark} h={6} w={6} color="white" />
-
-              <chakra.h1 mx={3} color="white" fontWeight="bold" fontSize="lg">
-              Implementation of Basic Codes  
-              </chakra.h1>
-            </Flex>
-
-            <Box py={4} px={6}>
-              <chakra.h1
-                fontSize="xl"
-                fontWeight="bold"
-                color={useColorModeValue("gray.800", "white")}
-              >
-                
-              </chakra.h1>
-
-              <chakra.p py={2} color={useColorModeValue("gray.700", "gray.400")} textAlign='justify'>
-              Tests the application of correct syntax and the application of the theory of programming.
-              </chakra.p>
-
-              
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  <Icon
-                    as={FaRegClock}
-                    
-                    h={6}
-                    w={6}
-                    mr={2}
-                  />
-
-                  <chakra.h1 px={2} fontSize="sm">
-                  4 Weeks 
-                  </chakra.h1>
-                </Flex>
-
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  <Icon as={BsFillAwardFill} h={6} w={6} mr={2} />
-
-                  <chakra.h1 px={2} fontSize="sm">
-                  difficulty level
-                  </chakra.h1>
-                </Flex>
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  
-                </Flex>
-              
-            </Box>
-          </Box>
-          
-
-          {/* box 3 */}
-          <Box
-          onClick={()=>{
-            navigate( "/tests")
-          }}
-            w="360px"
-            h="410px"
-            mr="50px"
-            mb="35px"
-            bg={useColorModeValue("white", "gray.800")}
-            shadow="2xl"
-            rounded="lg"
-            overflow="hidden"
-            
-            transform="scale(1.0)"
-            objectFit="contain"
-            transition="0.3s ease-in-out"
-            _hover={{
-              transform: 'scale(1.09)',
-            }}
-
-          >
-            <Image
-              w="full"
-              h={40}
-              fit="cover"
-              objectPosition="center"
-              src={TestImage6}
-              alt="avatar"
-            />
-
-            <Flex alignItems="center" px={6} py={3} bg="gray.900">
-              <Icon as={FaRegBookmark} h={6} w={6} color="white" />
-
-              <chakra.h1 mx={3} color="white" fontWeight="bold" fontSize="lg">
-              Programming Basics   
-              </chakra.h1>
-            </Flex>
-
-            <Box py={4} px={6}>
-              <chakra.h1
-                fontSize="xl"
-                fontWeight="bold"
-                color={useColorModeValue("gray.800", "white")}
-              >
-                
-              </chakra.h1>
-
-              <chakra.p py={2} color={useColorModeValue("gray.700", "gray.400")} textAlign='justify'>
-              Tests the usage of data types, variables, and other key concepts of programming. 
-              </chakra.p>
-
-              
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  <Icon
-                    as={FaRegClock}
-                    
-                    h={6}
-                    w={6}
-                    mr={2}
-                  />
-
-                  <chakra.h1 px={2} fontSize="sm">
-                  4 Weeks 
-                  </chakra.h1>
-                </Flex>
-
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  <Icon as={BsFillAwardFill} h={6} w={6} mr={2} />
-
-                  <chakra.h1 px={2} fontSize="sm">
-                  difficulty level
-                  </chakra.h1>
-                </Flex>
-                <Flex
-                  alignItems="center"
-                  mt={4}
-                  color={useColorModeValue("gray.700", "gray.200")}
-                >
-                  
-                </Flex>
-              
-            </Box>
-          </Box>
-          
-
-      </Flex>
-    
-
-
-    </>
+    </Stat>
   );
-};
+}
 
+function PriceWrapper({ children }: { children: ReactNode }) {
+  return (
+    <Box
+      mb={4}
+      shadow="base"
+      borderWidth="1px"
+      alignSelf={{ base: 'center', lg: 'flex-start' }}
+      borderColor={useColorModeValue('gray.200', 'gray.500')}
+      borderRadius={'xl'}>
+      {children}
+    </Box>
+  );
+}
 
-export default Home;
+export default function Simple() {
+  return (
+    <Container maxW={'6xl'}>
+      <Heading as='h2' size='2xl' noOfLines={1} mt={{lg:10}} pb={{lg:10}} textAlign='left'>
+        Heading can be added here
+      </Heading>
+      <SimpleGrid
+        columns={{ base: 1, lg: 1 }}
+        spacing={{ base: 8, md: 10 }}
+        py={{ base: 18, md: 24 ,lg:10 }}>
+        <Flex>
+          <Image
+            rounded={'md'}
+            alt={'product image'}
+            src={
+              'https://images.unsplash.com/photo-1596516109370-29001ec8ec36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyODE1MDl8MHwxfGFsbHx8fHx8fHx8fDE2Mzg5MzY2MzE&ixlib=rb-1.2.1&q=80&w=1080'
+            }
+            fit={'cover'}
+            align={'center'}
+            w={'100%'}
+            h={{ base: '100%', sm: '400px', lg: '500px' }}
+          />
+        </Flex>
+        <Stack spacing={{ base: 6, md: 10 }}>
+          <Box as={'header'}>
+            <Heading
+              lineHeight={1.1}
+              fontWeight={600}
+              fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
+              Automatic Watch
+            </Heading>
+            <Text
+              color={useColorModeValue('gray.900', 'gray.400')}
+              fontWeight={300}
+              fontSize={'2xl'}>
+              SUBSCRIPT 
+            </Text>
+          </Box>
+
+          <Stack
+            spacing={{ base: 4, sm: 6 }}
+            direction={'column'}
+            divider={
+              <StackDivider
+                borderColor={useColorModeValue('gray.200', 'gray.600')}
+              />
+            }>
+                <VStack spacing={{ base: 4, sm: 6 }}>
+                  <Text
+                    color={useColorModeValue('gray.500', 'gray.400')}
+                    fontSize={'2xl'}
+                    fontWeight={'300'}>
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                    diam nonumy eirmod tempor invidunt ut labore Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                    diam nonumy eirmod tempor invidunt ut labore
+                  </Text>
+                  <Text fontSize={'lg'}>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
+                    aliquid amet at delectus doloribus dolorum expedita hic, ipsum
+                    maxime modi nam officiis porro, quae, quisquam quos
+                    reprehenderit velit? Natus, totam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
+                    aliquid amet at delectus doloribus dolorum expedita hic, ipsum
+                    maxime modi nam officiis porro, quae, quisquam quos
+                    reprehenderit velit? Natus, totam.
+                  </Text>
+                </VStack>
+              <Box>
+                  <Text
+                    fontSize={{ base: '16px', lg: '18px' }}
+                    color={useColorModeValue('yellow.500', 'yellow.300')}
+                    fontWeight={'500'}
+                    textTransform={'uppercase'}
+                    mb={'4'}>
+                    
+                  </Text>
+                  <Box maxW="7xl" mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }}>
+                      <chakra.h1
+                        textAlign={'center'}
+                        fontSize={'4xl'}
+                        py={10}
+                        fontWeight={'bold'}>
+                        Features or a tag line on why to choose.
+                      </chakra.h1>
+                      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }}>
+                        <StatsCard
+                          title={'Users'}
+                          stat={'5,000'}
+                          icon={<BsPerson size={'3em'} />}
+                        />
+                        <StatsCard
+                          title={'Servers'}
+                          stat={'1,000'}
+                          icon={<FiServer size={'3em'} />}
+                        />
+                        <StatsCard
+                          title={'Datacenters'}
+                          stat={'7'}
+                          icon={<GoLocation size={'3em'} />}
+                          />
+                      </SimpleGrid>
+                    </Box>
+                
+              </Box>
+            
+          </Stack>
+
+          {/* <Button
+            rounded={'none'}
+            w={'full'}
+            mt={8}
+            size={'lg'}
+            py={'7'}
+            bg={useColorModeValue('gray.900', 'gray.50')}
+            color={useColorModeValue('white', 'gray.900')}
+            textTransform={'uppercase'}
+            _hover={{
+              transform: 'translateY(2px)',
+              boxShadow: 'lg',
+            }}>
+            Add to cart
+          </Button> */}
+
+          <Stack direction="row" alignItems="center" justifyContent={'center'}>
+            
+            
+          </Stack>
+        </Stack>
+      </SimpleGrid>
+
+      <Box py={12}>
+      <VStack spacing={2} textAlign="center">
+        <Heading as="h1" fontSize="4xl">
+          Plans that fit your need
+        </Heading>
+        <Text fontSize="lg" color={'gray.500'}>
+          Start with 14-day free trial. No credit card needed. Cancel at
+          anytime.
+        </Text>
+      </VStack>
+      <Stack
+        direction={{ base: 'column', md: 'row' }}
+        textAlign="center"
+        justify="center"
+        spacing={{ base: 4, lg: 10 }}
+        py={10}>
+        <PriceWrapper>
+          <Box py={4} px={12}>
+            <Text fontWeight="500" fontSize="2xl">
+              Hobby
+            </Text>
+            <HStack justifyContent="center">
+              <Text fontSize="3xl" fontWeight="600">
+                $
+              </Text>
+              <Text fontSize="5xl" fontWeight="900">
+                79
+              </Text>
+              <Text fontSize="3xl" color="gray.500">
+                /month
+              </Text>
+            </HStack>
+          </Box>
+          <VStack
+            bg={useColorModeValue('gray.50', 'gray.700')}
+            py={4}
+            borderBottomRadius={'xl'}>
+            <List spacing={3} textAlign="start" px={12}>
+              <ListItem>
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                unlimited build minutes
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                Lorem, ipsum dolor.
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                5TB Lorem, ipsum dolor.
+              </ListItem>
+            </List>
+            <Box w="80%" pt={7}>
+              <Button w="full" colorScheme="red" variant="outline">
+                Start trial
+              </Button>
+            </Box>
+          </VStack>
+        </PriceWrapper>
+
+        <PriceWrapper>
+          <Box position="relative">
+            <Box
+              position="absolute"
+              top="-16px"
+              left="50%"
+              style={{ transform: 'translate(-50%)' }}>
+              <Text
+                textTransform="uppercase"
+                bg={useColorModeValue('red.300', 'red.700')}
+                px={3}
+                py={1}
+                color={useColorModeValue('gray.900', 'gray.300')}
+                fontSize="sm"
+                fontWeight="600"
+                rounded="xl">
+                Most Popular
+              </Text>
+            </Box>
+            <Box py={4} px={12}>
+              <Text fontWeight="500" fontSize="2xl">
+                Growth
+              </Text>
+              <HStack justifyContent="center">
+                <Text fontSize="3xl" fontWeight="600">
+                  $
+                </Text>
+                <Text fontSize="5xl" fontWeight="900">
+                  149
+                </Text>
+                <Text fontSize="3xl" color="gray.500">
+                  /month
+                </Text>
+              </HStack>
+            </Box>
+            <VStack
+              bg={useColorModeValue('gray.50', 'gray.700')}
+              py={4}
+              borderBottomRadius={'xl'}>
+              <List spacing={3} textAlign="start" px={12}>
+                <ListItem>
+                  <ListIcon as={FaCheckCircle} color="green.500" />
+                  unlimited build minutes
+                </ListItem>
+                <ListItem>
+                  <ListIcon as={FaCheckCircle} color="green.500" />
+                  Lorem, ipsum dolor.
+                </ListItem>
+                <ListItem>
+                  <ListIcon as={FaCheckCircle} color="green.500" />
+                  5TB Lorem, ipsum dolor.
+                </ListItem>
+                <ListItem>
+                  <ListIcon as={FaCheckCircle} color="green.500" />
+                  5TB Lorem, ipsum dolor.
+                </ListItem>
+                <ListItem>
+                  <ListIcon as={FaCheckCircle} color="green.500" />
+                  5TB Lorem, ipsum dolor.
+                </ListItem>
+              </List>
+              <Box w="80%" pt={7}>
+                <Button w="full" colorScheme="red">
+                  Start trial
+                </Button>
+              </Box>
+            </VStack>
+          </Box>
+        </PriceWrapper>
+        <PriceWrapper>
+          <Box py={4} px={12}>
+            <Text fontWeight="500" fontSize="2xl">
+              Scale
+            </Text>
+            <HStack justifyContent="center">
+              <Text fontSize="3xl" fontWeight="600">
+                $
+              </Text>
+              <Text fontSize="5xl" fontWeight="900">
+                349
+              </Text>
+              <Text fontSize="3xl" color="gray.500">
+                /month
+              </Text>
+            </HStack>
+          </Box>
+          <VStack
+            bg={useColorModeValue('gray.50', 'gray.700')}
+            py={4}
+            borderBottomRadius={'xl'}>
+            <List spacing={3} textAlign="start" px={12}>
+              <ListItem>
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                unlimited build minutes
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                Lorem, ipsum dolor.
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaCheckCircle} color="green.500" />
+                5TB Lorem, ipsum dolor.
+              </ListItem>
+            </List>
+            <Box w="80%" pt={7}>
+              <Button w="full" colorScheme="red" variant="outline">
+                Start trial
+              </Button>
+            </Box>
+          </VStack>
+        </PriceWrapper>
+      </Stack>
+    </Box>
+    </Container>
+  );
+}
