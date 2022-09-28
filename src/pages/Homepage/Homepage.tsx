@@ -7,6 +7,7 @@ import Testimonials from './../../components/LandingPage/Testimonials/Testimonia
 import Features5 from '../../components/LandingPage/Features/Features5';
 import Features6 from '../../components/LandingPage/Features/Features6';
 import Features7 from '../../components/LandingPage/Features/Features7';
+import Features1 from '../../components/LandingPage/Features/Features1';
 
 export default function Homepage() {
     return (
@@ -14,8 +15,10 @@ export default function Homepage() {
         <>
             <NavBar />
             <Hero />
-            {/* <Features1 /> */}
+            
             <Features2 />
+            <Features1 />
+            
             <Features7 />
             <Features3 />
             {/* <Features4 /> */}
