@@ -111,7 +111,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
         <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
         <a href="/home">
-        <img alt='logo' style={{ width: 150 }} src={ Logo } />
+        <img alt='logo' style={{ width: ' 50px' }} src={ Logo } />
         </a>
         </Text>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />

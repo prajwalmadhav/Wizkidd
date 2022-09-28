@@ -93,6 +93,8 @@ import Logo from "../../../assets/Images/logoblack.png";
               <img alt='logo' style={{ width: 40 }} src={ Logo } />   {/* logo */}
               </a>
             </Text>
+
+            <Text ml={{lg:5}} fontFamily={'heading'}  fontSize={{ base: '3xl', sm: '4xl', lg: '3xl' }} fontWeight={600} as={'span'}  >Wizkid Academy</Text>
   
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
               <DesktopNav />
@@ -110,7 +112,7 @@ import Logo from "../../../assets/Images/logoblack.png";
             {/* Dark Mode Beta: Only for presentation
             Uncomment first display*/}
             <IconButton
-              //  display={{ base: 'none', md: 'none', lg:'none' }}  // Dark Mode Beta: Only for presentation change none to flex OR comment this whole line 
+               display={{ base: 'none', md: 'none', lg:'none' }}  // Dark Mode Beta: Only for presentation change none to flex OR comment this whole line 
                  onClick={()=>{
                  onToggleColor()
                  toggleColorMode()
@@ -300,46 +302,8 @@ import Logo from "../../../assets/Images/logoblack.png";
   }
   
   const NAV_ITEMS: Array<NavItem> = [
-    {
-      label: 'About Us',
-      children: [
-        {
-          label: 'How it works',
-          subLabel: 'See how it works',
-          href: '#',
-        },
-        {
-          label: 'Github',
-          subLabel: 'Contribute to Open Source',
-          href: 'https://github.com/prajwalmadhav/adaler-frontend',
-        },
-      ],
-     
-    },
-    {
-      label: 'Features',
-      children: [
-        {
-          label: 'Homepage',
-          subLabel: 'Dashboard-view Courses and Tests',
-          href: '',
-        },
-        {
-          label: 'Course Overview',
-          subLabel: 'View all courses in detail',
-          href: '',
-        },
-        { 
-          label: 'Python Course',
-          subLabel: 'Checkout Python Course',
-          href: '',
-      },
-      ],
-    },
-    {
-      label: 'Contact Us',
-      href: '/contactus',
-    },
+    
+    
     // {
     //   label: '',
     //   href: '',
