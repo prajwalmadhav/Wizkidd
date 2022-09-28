@@ -17,6 +17,8 @@ import {
   TagRightIcon,
   TagCloseButton,
   Badge,
+  Heading,
+  Divider,
 } from "@chakra-ui/react";
 import test from './test.json'
 import { ArrowForwardIcon, EmailIcon } from "@chakra-ui/icons";
@@ -222,170 +224,181 @@ export default function Sj() {
   }
   
   return (
-
-    <Stack >
+    <>
+      <Heading mt={{ base: 0, md: "10%", lg: 10 }}
+            mb={{ base: 0, md: "10%", lg: 10 }}
+            ml={{ base: 0, md: "10%", lg: "30%" }}
+            mr={{ base: 0, md: "10%", lg: "15%" }} 
+            as='h2' size='xl' noOfLines={1}  pb={{lg:1}} textAlign='center'>
+          Quiz Section
+        </Heading>
+        <Divider ml={{lg:'21%'}} width={{lg:'1110px' }}/>
         <Progress
-          mt={{ base: 0, md: "10%", lg: 10 }}
-          mb={{ base: 0, md: "10%", lg: 5 }}
-          ml={{ base: 0, md: "10%", lg: "30%" }}
-          mr={{ base: 0, md: "10%", lg: "15%" }}
-          value={qCount * 10}
-          sx = {{'>[role="progressbar"]':{transition: "width 200ms ease-out"}}}
-          size='md' 
-          colorScheme='red' />
-        
-        <Flex
-          ml={{ base: 0, md: "10%", lg: 40 }}
-          bg={useColorModeValue("white", "gray.800")}
-          w="100%"
-          p={3}
-          justify="center"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <Box
-          bg={useColorModeValue("gray.50", "gray.800")}
-            w={{ base: "full", md: "75%", lg: "70%" }}
-            px={4}
-            rounded="40"
-            py={10}
-            textAlign={{ base: "left", lg: "center" }}
-            ml={{ base: 0, md: "10%", lg: "15%" }}
+            mt={{ base: 0, md: "10%", lg: 20 }}
+            mb={{ base: 0, md: "10%", lg: 5 }}
+            ml={{ base: 0, md: "10%", lg: "30%" }}
+            mr={{ base: 0, md: "10%", lg: "15%" }}
+            value={qCount * 10}
+            sx = {{'>[role="progressbar"]':{transition: "width 200ms ease-out"}}}
+            size='md' 
+            colorScheme='red' />
+      <Stack >
+                    
+          <Flex
+            ml={{ base: 0, md: "10%", lg: 0 }}
+            bg={useColorModeValue("white", "gray.800")}
+            w="100%"
+            p={3}
+            justify="center"
+            alignItems="center"
+            justifyContent="center"
           >
-            <chakra.span
-              fontSize={{ base: "3xl", sm: "4xl" }}
-              fontWeight="extrabold"
-              letterSpacing="tight"
-              lineHeight="shorter"
-              textAlign="center"
-              color={useColorModeValue("gray.900", "gray.100")}
-              mb={6}
+            <Box
+            bg={useColorModeValue("gray.50", "gray.800")}
+              w={{ base: "full", md: "75%", lg: "70%" }}
+              px={4}
+              rounded="40"
+              py={10}
+              textAlign={{ base: "left", lg: "center" }}
+              ml={{ base: 0, md: "10%", lg: "15%" }}
             >
-              <chakra.span display="block">{question}</chakra.span>
-            </chakra.span>
-            <Badge justify="center"
-          alignItems="center"
-          justifyContent="center" colorScheme='green'>Level {level+1}</Badge>
-          </Box>
-          
-        </Flex>
-        
-
-        <Stack >
-        <RadioGroup defaultValue='1' >
-          <Stack ml={{base: '5%' ,lg: '25%'}} mr={{base:'5%',lg:'10%'}} spacing={6} direction='column' >
-          
-  
-          <Radio value='1' onClick={() => optionHandler(1)}>
-
-          <Box
-            onClick={() => optionHandler(1)}
-            cursor='pointer'
-            borderWidth='1px'
-            borderRadius='md'
-            boxShadow='md'
-            _checked={{
-              bg: 'teal.600',
-              color: 'white',
-              borderColor: 'teal.600',
-            }}
-            _focus={{
-              boxShadow: 'outline',
-            }}
-            px={5}
-            pr={20}
-            py={3}
-            >
-            {/* Lorem ipsum dolor sit amet. Ea consequuntur nihil est ipsum autem et ducimus voluptatem. Aut ipsum dolores est optio */}
-            {options[level][counter][0]}
-          </Box>
-          </Radio>
-          <Radio value='2' onClick={() => optionHandler(2)}>
-          <Box
-            onClick={() => optionHandler(2)}
-            cursor='pointer'
-            borderWidth='1px'
-            borderRadius='md'
-            boxShadow='md'
-            _checked={{
-              bg: 'teal.600',
-              color: 'white',
-              borderColor: 'teal.600',
-            }}
-            _focus={{
-              boxShadow: 'outline',
-            }}
-            px={5}
-            pr={20}
-            py={3}
-            >
-            {/* Lorem ipsum dolor sit amet. Ea consequuntur nihil est ipsum autem et ducimus voluptatem. Aut ipsum dolores est optio */}
-            {options[level][counter][1]}
+              <chakra.span
+                fontSize={{ base: "3xl", sm: "4xl" }}
+                fontWeight="extrabold"
+                letterSpacing="tight"
+                lineHeight="shorter"
+                textAlign="center"
+                color={useColorModeValue("gray.900", "gray.100")}
+                mb={6}
+              >
+                <chakra.span display="block">{question}</chakra.span>
+              </chakra.span>
+              <Badge justify="center"
+            alignItems="center"
+            justifyContent="center" colorScheme='green'>Level {level+1}</Badge>
+            </Box>
             
-          </Box>
-          </Radio>
-          <Radio value='3' onClick={() => optionHandler(3)}>
-          <Box
-          onClick={() => optionHandler(3)}
-            cursor='pointer'
-            borderWidth='1px'
-            borderRadius='md'
-            boxShadow='md'
-            _checked={{
-              bg: 'teal.600',
-              color: 'white',
-              borderColor: 'teal.600',
-            }}
-            _focus={{
-              boxShadow: 'outline',
-            }}
-            px={5}
-            pr={20}
-            py={3}
-            >
-            {/* Lorem ipsum dolor sit amet. Ea consequuntur nihil est ipsum autem et ducimus voluptatem. Aut ipsum dolores est optio */}
-            {options[level][counter][2]}
+          </Flex>
+          
 
-          </Box>
-          </Radio>
-          <Radio value='4' onClick={() => optionHandler(4)}>
-          <Box
-          onClick={() => optionHandler(4)}
-            cursor='pointer'
-            borderWidth='1px'
-            borderRadius='md'
-            boxShadow='md'
-            _checked={{
-              bg: 'teal.600',
-              color: 'white',
-              borderColor: 'teal.600',
-            }}
-            _focus={{
-              boxShadow: 'outline',
-            }}
-            px={5}
-            pr={20}
-            py={3}
-            >
-            {/* Lorem ipsum dolor sit amet. Ea consequuntur nihil est ipsum autem et ducimus voluptatem. Aut ipsum dolores est optio */}
-            {options[level][counter][3]}
+          <Stack >
+          <RadioGroup defaultValue='1' >
+            <Stack ml={{base: '5%' ,lg: '25%'}} mr={{base:'5%',lg:'10%'}} spacing={6} direction='column' >
+            
+    
+            <Radio value='1' onClick={() => optionHandler(1)}>
 
-          </Box>
-          </Radio>
-        
+            <Box
+              onClick={() => optionHandler(1)}
+              cursor='pointer'
+              borderWidth='1px'
+              borderRadius='md'
+              boxShadow='md'
+              _checked={{
+                bg: 'teal.600',
+                color: 'white',
+                borderColor: 'teal.600',
+              }}
+              _focus={{
+                boxShadow: 'outline',
+              }}
+              px={5}
+              pr={20}
+              py={3}
+              >
+              {/* Lorem ipsum dolor sit amet. Ea consequuntur nihil est ipsum autem et ducimus voluptatem. Aut ipsum dolores est optio */}
+              {options[level][counter][0]}
+            </Box>
+            </Radio>
+            <Radio value='2' onClick={() => optionHandler(2)}>
+            <Box
+              onClick={() => optionHandler(2)}
+              cursor='pointer'
+              borderWidth='1px'
+              borderRadius='md'
+              boxShadow='md'
+              _checked={{
+                bg: 'teal.600',
+                color: 'white',
+                borderColor: 'teal.600',
+              }}
+              _focus={{
+                boxShadow: 'outline',
+              }}
+              px={5}
+              pr={20}
+              py={3}
+              >
+              {/* Lorem ipsum dolor sit amet. Ea consequuntur nihil est ipsum autem et ducimus voluptatem. Aut ipsum dolores est optio */}
+              {options[level][counter][1]}
+              
+            </Box>
+            </Radio>
+            <Radio value='3' onClick={() => optionHandler(3)}>
+            <Box
+            onClick={() => optionHandler(3)}
+              cursor='pointer'
+              borderWidth='1px'
+              borderRadius='md'
+              boxShadow='md'
+              _checked={{
+                bg: 'teal.600',
+                color: 'white',
+                borderColor: 'teal.600',
+              }}
+              _focus={{
+                boxShadow: 'outline',
+              }}
+              px={5}
+              pr={20}
+              py={3}
+              >
+              {/* Lorem ipsum dolor sit amet. Ea consequuntur nihil est ipsum autem et ducimus voluptatem. Aut ipsum dolores est optio */}
+              {options[level][counter][2]}
+
+            </Box>
+            </Radio>
+            <Radio value='4' onClick={() => optionHandler(4)}>
+            <Box
+            onClick={() => optionHandler(4)}
+              cursor='pointer'
+              borderWidth='1px'
+              borderRadius='md'
+              boxShadow='md'
+              _checked={{
+                bg: 'teal.600',
+                color: 'white',
+                borderColor: 'teal.600',
+              }}
+              _focus={{
+                boxShadow: 'outline',
+              }}
+              px={5}
+              pr={20}
+              py={3}
+              >
+              {/* Lorem ipsum dolor sit amet. Ea consequuntur nihil est ipsum autem et ducimus voluptatem. Aut ipsum dolores est optio */}
+              {options[level][counter][3]}
+
+            </Box>
+            </Radio>
+          
+            </Stack>
+          </RadioGroup>
+          <Stack  pb={10} direction='row' spacing={4}
+            >
+            <Button  ml={{base: '70%',lg:'82%'}} mt={3} rightIcon={<ArrowForwardIcon />} colorScheme='orange' variant='outline'
+              onClick={nextHandler}
+            >
+              Next
+            </Button>
           </Stack>
-         </RadioGroup>
-         <Stack  pb={10} direction='row' spacing={4}
-          >
-          <Button  ml={{base: '70%',lg:'82%'}} mt={3} rightIcon={<ArrowForwardIcon />} colorScheme='orange' variant='outline'
-            onClick={nextHandler}
-          >
-            Next
-          </Button>
-        </Stack>
 
-        </Stack>
-    </Stack>
+          </Stack>
+          
+      </Stack>
+      <Divider mt={{lg:20}} mb={{lg:20}} ml={{lg:80}} width={{lg:'1110px' }}/>
+    </>
   );
 }
 
