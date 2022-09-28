@@ -378,7 +378,7 @@ export default function Simple() {
               </ListItem>
               <ListItem>
                 <ListIcon as={FaCheckCircle} color="green.500" />
-                5TB Lorem, ipsum dolor.
+                5TB Lorem, ipsum dolor. 
               </ListItem>
             </List>
             <Box w="80%" pt={7}>
