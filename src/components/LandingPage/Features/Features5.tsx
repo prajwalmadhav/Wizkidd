@@ -47,12 +47,12 @@ const CTA = () => {
         <chakra.h1
           mb={4}
           fontSize={{ base: "4xl", md: "4xl", lg: "5xl" }}
-          fontWeight="bold"
+          fontWeight="medium"
           color={useColorModeValue("brand.600", "gray.300")}
-          lineHeight="shorter"
-          textShadow="2px 0 currentcolor"
+          lineHeight="auto"
+          textShadow="1px 0 currentcolor"
         >
-           AI In Education {/*//We&apos;re here to help */}
+           specific title [doctor] {/*//We&apos;re here to help */}
         </chakra.h1>
         <chakra.p
           pr={{ base: 0, lg: 16 }}
@@ -62,7 +62,7 @@ const CTA = () => {
           letterSpacing="wider"
           textAlign='justify'
         >
-          We use an innovative model to help our students make the best of their time and energy. The introduction of AI in education has helped solve a lot of problems. It has made teaching more efficient and made it more desirable to students.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </chakra.p>
         <Box display="inline-flex" rounded="md" shadow="md">
           <chakra.a
