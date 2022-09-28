@@ -9,6 +9,7 @@ import Course4 from '../../components/Dashboard/courseoverview/Course4'
 import Course5 from '../../components/Dashboard/courseoverview/Course5';
 import Course6 from '../../components/Dashboard/courseoverview/Course6'
 import { Divider } from '@chakra-ui/react'
+import QuizOne from '../../components/Quiz/QuizOne'
 
 
 
@@ -17,13 +18,10 @@ export default function Homepage() {
         
         <>
         
-            
             <Course1 />
+            <QuizOne />
             <Course2 />
-            <Course3 />
-            <Course4 />
-            <Course5 />
-            <Course6 />
+           
             
 
             
