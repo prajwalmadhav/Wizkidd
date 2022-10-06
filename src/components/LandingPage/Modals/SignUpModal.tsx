@@ -35,14 +35,13 @@ import {
     Spinner,
   } from '@chakra-ui/react';
   import { Col, Container, Navbar } from "react-bootstrap";
-  import { auth, provider } from "../../../firebaseSetup";
   import { IoMdCheckmarkCircle } from "react-icons/io";
   import './SignUpModal.min.css';
   import firebase from 'firebase/compat/app';
   import Form from 'react-bootstrap/Form';
   import { useNavigate } from "react-router-dom"
   import { FcGoogle } from 'react-icons/fc';
-  import GoogleAuth from '../GoogleAuth/GoogleAuth'
+  // import GoogleAuth from '../GoogleAuth/GoogleAuth'
   import BeatLoader from 'react-spinners/BeatLoader';
 
   
@@ -105,10 +104,10 @@ export default function SignUpModal({signinModal,onClose,...props}: Omit<ModalPr
         }
         else{
           try {
-            await auth.createUserWithEmailAndPassword(
-              emailRef.current!.value,
-              passwordRef.current!.value,
-            );
+            // await auth.createUserWithEmailAndPassword(
+            //   emailRef.current!.value,
+            //   passwordRef.current!.value,
+            // );
             const user = firebase.auth().currentUser;
             await user?.updateProfile({
               displayName: nameRef.current?.value
@@ -194,7 +193,7 @@ export default function SignUpModal({signinModal,onClose,...props}: Omit<ModalPr
             leftIcon={<FcGoogle />}
             onClick={()=>{
                 setIsLoadingGoogle(true)
-                GoogleAuth(navigate, setIsLoadingGoogle)
+                // GoogleAuth(navigate, setIsLoadingGoogle)
             }}>
               <Text>Sign up with Google</Text>
           </Button>

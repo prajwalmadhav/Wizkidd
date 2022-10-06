@@ -1,6 +1,5 @@
 import React from 'react';
 import firebase from 'firebase/compat/app';
-import { auth } from "../../firebaseSetup";
 import { BuzzFeedQuiz } from "react-buzzfeed-quiz";
 //import "react-buzzfeed-quiz/lib/styles.css";
 import "./PreQuestions.min.css"
@@ -13,7 +12,7 @@ export default function Test() {
     const BackgroundImage = "https://smaller-pictures.appspot.com/images/dreamstime_xxl_65780868_small.jpg";
     const FirstResultImage  = "https://smaller-pictures.appspot.com/images/dreamstime_xxl_65780868_small.jpg";
     const SecondResultImage =  "https://smaller-pictures.appspot.com/images/dreamstime_xxl_65780868_small.jpg";
-    let showName = auth.currentUser?.displayName as string;
+    let showName = "John" as string;
     const user = firebase.auth().currentUser;  
     const uid = user?.uid
     const ref = firebase.firestore().collection("person")

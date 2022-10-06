@@ -35,7 +35,6 @@ import {
 import { IconType } from 'react-icons';
 import { ReactText } from 'react';
 import Logo from "../../assets/Images/logoblack.png";
-import { auth } from "../../firebaseSetup";
 import {signOut} from "firebase/auth";
 import { useNavigate } from "react-router-dom"
 import { link } from 'fs';
@@ -165,7 +164,7 @@ interface MobileProps extends FlexProps {
   onOpen: () => void;
 }
 const SignOut = async () => {
-  await auth.signOut();
+  // await auth.signOut();
 };
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   const navigate = useNavigate()
@@ -178,7 +177,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
     });  
   })
   
-  var pic = auth.currentUser?.photoURL as any
+  var pic = "" as any
   if (pic == null || pic === undefined) {
     pic = "https://joeschmoe.io/api/v1/random" as any
   }
