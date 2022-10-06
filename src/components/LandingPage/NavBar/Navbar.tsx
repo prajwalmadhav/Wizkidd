@@ -39,7 +39,6 @@ import {
 
   import React, { useState, useRef } from 'react'
   import 'firebase/compat/auth';
-  import { auth } from "../../../../src/firebaseSetup";
   import { Col, Container, Form, Navbar } from "react-bootstrap";
 import SignInModal from '../Modals/SignInModal';
 import SignUpModal from '../Modals/SignUpModal';

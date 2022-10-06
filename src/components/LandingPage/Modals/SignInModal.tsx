@@ -34,7 +34,6 @@ import {
 
   import BeatLoader from "react-spinners/BeatLoader";
   import { Col, Container, Form, Navbar } from "react-bootstrap";
-  import { auth, provider } from "../../../firebaseSetup";
   import {Link} from "react-router-dom";
   import './SignInModal.min.css';
   import './SignInModal';
@@ -42,7 +41,7 @@ import {
   import SignUpModal from './SignUpModal';
   import { useNavigate } from "react-router-dom"
   import { FcGoogle } from 'react-icons/fc';
-  import GoogleAuth from '../GoogleAuth/GoogleAuth'
+  // import GoogleAuth from '../GoogleAuth/GoogleAuth'
   
 export default function SignInModal({
       signupModal,
@@ -75,10 +74,10 @@ export default function SignInModal({
   const passwordRef = useRef<HTMLInputElement>(null);
   const signIn = async () => {
     try {
-      await auth.signInWithEmailAndPassword(
-        emailRef.current!.value,
-        passwordRef.current!.value
-      );
+      // await auth.signInWithEmailAndPassword(
+      //   emailRef.current!.value,
+      //   passwordRef.current!.value
+      // );
       successToast();
       navigate('/home');
     } catch (error) {
@@ -129,7 +128,7 @@ export default function SignInModal({
                   spinner={<BeatLoader size={8} color='blue' />}
                   leftIcon={<FcGoogle />}
                   onClick={()=>{
-                      GoogleAuth(navigate, setIsLoadingGoogle);
+                      // GoogleAuth(navigate, setIsLoadingGoogle);
                       setIsLoadingGoogle(true);
                 }}>
               <Text>Sign in with Google</Text>
