@@ -31,7 +31,6 @@ import {
   useToast,
   Spinner,
 } from '@chakra-ui/react';
-
 import BeatLoader from 'react-spinners/BeatLoader';
 import { Col, Container, Form, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -41,6 +40,8 @@ import './SignOut';
 import SignUpModal from './SignUpModal';
 import { useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
+import { GoogleLogin } from 'react-google-login';
+import { GoogleAuthButton } from '../..';
 // import GoogleAuth from '../GoogleAuth/GoogleAuth'
 
 export default function SignInModal({
@@ -85,6 +86,13 @@ export default function SignInModal({
   const [isLoading, setIsLoading] = useState(false);
   const [isLoadingGoogle, setIsLoadingGoogle] = useState(false);
 
+  const onSuccess = (res: { profileObj: Object }) => {
+    console.log('[Login Success] currentUser:', res.profileObj);
+  };
+  const onFailure = (res: any) => {
+    console.log('[Login failed] res:', res);
+  };
+
   return (
     <Modal
       onClose={onClose}
@@ -120,7 +128,6 @@ export default function SignInModal({
             <Checkbox className="Checkbox2">Remember me</Checkbox>
           </Form.Group>
           <br></br>
-
           <Button
             isLoading={isLoading}
             spinner={<BeatLoader size={8} color="white" />}
@@ -134,23 +141,33 @@ export default function SignInModal({
           >
             Sign In{' '}
           </Button>
-          <Button
-            className="buttongoogle"
-            isLoading={isLoadingGoogle}
-            w={'full'}
-            maxW={'md'}
-            marginTop={'10px'}
-            //variant={'outline'}
+          {/* <GoogleLogin
+            clientId="375893928808-3kf2gshb7dg37hrispa7fpk86an7409f.apps.googleusercontent.com"
+            render={(renderProps) => (
+              <Button
+                className="buttongoogle"
+                isLoading={isLoadingGoogle}
+                w={'full'}
+                maxW={'md'}
+                marginTop={'10px'}
+                //variant={'outline'}
 
-            spinner={<BeatLoader size={8} color="blue" />}
-            leftIcon={<FcGoogle />}
-            onClick={() => {
-              // GoogleAuth(navigate, setIsLoadingGoogle);
-              setIsLoadingGoogle(true);
-            }}
-          >
-            <Text>Sign in with Google</Text>
-          </Button>
+                spinner={<BeatLoader size={8} color="blue" />}
+                leftIcon={<FcGoogle />}
+                onClick={() => {
+                  // GoogleAuth(navigate, setIsLoadingGoogle);
+                  setIsLoadingGoogle(true);
+                }}
+              >
+                <Text>Sign in with Google</Text>
+              </Button>
+            )}
+            buttonText="Login"
+            // onSuccess={onSuccess}
+            onFailure={onFailure}
+            cookiePolicy={'single_host_origin'}
+          /> */}
+          <GoogleAuthButton text="continue_with" />
         </ModalBody>
         <br></br>
         <ModalFooter className="ModalFooter2"></ModalFooter>

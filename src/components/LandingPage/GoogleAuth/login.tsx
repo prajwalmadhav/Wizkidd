@@ -15,7 +15,7 @@ function Login () {
         <GoogleLogin
             clientId = {clientId}
             buttonText = "Login"
-            onSuccess = {onSuccess}
+            // onSuccess = {onSuccess}
             onFailure = {onFailure}
             cookiePolicy = {'single_host_origin'}
             style = {{ marginTop : ' 100px ' }}
