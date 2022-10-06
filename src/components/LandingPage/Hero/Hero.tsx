@@ -26,31 +26,29 @@ export default function CallToActionWithVideo() {
           <Heading
             lineHeight={1.1}
             fontWeight={600}
-            fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}>
+            fontSize={{ base: '3xl', sm: '4xl', lg: '5xl' }}>
             <Text
               as={'span'}
               position={'relative'}
               _after={{
                 content: "''",
                 width: 'full',
-                height: '30%',
+                height: '0%',
                 position: 'absolute',
                 bottom: 1,
                 left: 0,
                 bg: 'red.400',
                 zIndex: -1,
               }}>
-              Our title
+              YOUR TIME MACHINE 
             </Text>
             <br />
             <Text as={'span'} color={'red.400'}>
-              Comes here!
+              TO THE FUTURE
             </Text>
           </Heading>
           <Text color={'gray.500'}>
-            Snippy is a rich coding snippets app that lets you create your own
-            code snippets, categorize them, and even sync them in the cloud so
-            you can use them anywhere. All that is free!
+          Every child has a Dream. Every Dream has a Goal. Every Goal has an Action. Every Action comes with an Experience.
           </Text>
           <Stack
             spacing={{ base: 4, sm: 6 }}
@@ -136,7 +134,7 @@ const PlayIcon = createIcon({
 export const Blob = (props: IconProps) => {
   return (
     <Icon
-      width={'100%'}
+      width={'0%'}
       viewBox="0 0 578 440"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
