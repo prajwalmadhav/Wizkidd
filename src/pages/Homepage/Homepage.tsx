@@ -8,6 +8,7 @@ import Features5 from '../../components/LandingPage/Features/Features5';
 import Features6 from '../../components/LandingPage/Features/Features6';
 import Features7 from '../../components/LandingPage/Features/Features7';
 import Features1 from '../../components/LandingPage/Features/Features1';
+import Features33 from '../../components/LandingPage/Features/Features33';
 
 export default function Homepage() {
     return (
@@ -18,9 +19,10 @@ export default function Homepage() {
             {/* <Features1 /> */}
             <Features2 />                       
             <Features7 />
-            <Features3 />
+            <Features33 />
+            <Features3 />  
             {/* <Features4 /> */}
-            <Features5 />
+            {/* <Features5 /> //specific doctor info section */}
             <Features6 />
             {/* <Testimonials /> */}
             <Footer />
