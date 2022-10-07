@@ -9,15 +9,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Courses from './pages/Dashboard/Courses';
 import Sidebar from './components/Dashboard/Sidebar';
 
-import Course1 from './components/Dashboard/courseoverview/Course1';
-import Course2 from './components/Dashboard/courseoverview/Course2';
-import Course3 from './components/Dashboard/courseoverview/Course3';
-import Course4 from './components/Dashboard/courseoverview/Course4';
-import Course5 from './components/Dashboard/courseoverview/Course5';
-import Course6 from './components/Dashboard/courseoverview/Course6';
 import Testpg from "./components/Dashboard/Trial/Testpg";
-import PreQuestions from './components/WelcomePage/PreQuestions';
-import Courseinfo1 from './components/Dashboard/CourseInfo/Courseinfo1';
 
 
 import QuizOne from './components/Quiz/QuizOne';
@@ -28,10 +20,6 @@ import "./App.css"
 import TestPage from "./components/TestPage/TestPage";
 import Settings from "./components/Settings/Settings";
 import ProfilePage from "./components/Profile/ProfilePage";
-import ContactUs from "./components/ContactUs/ContactUs";
-import Introduction from "./components/Presentations/Introduction";
-import Slide1 from "./components/Presentations/Slide1";
-import Slide2 from "./components/Presentations/Slide2";
 const Homepage = lazy(() => import("./pages/Homepage/Homepage"))
 
 
@@ -49,34 +37,27 @@ export const App = () => {
             <Suspense fallback={<Spinner className="spinner" name='double-bounce' />
           }> <Homepage/></Suspense>
           }/>
-          <Route path='home' element={<Dashboard/>} />
+          
+          {/* <Route path='home' element={<Dashboard/>} /> */}
           <Route path='smoke' element={<Testpg/>} />
           <Route path='pg' element={<Testpg/>} />
-          <Route path='welcome' element={<PreQuestions/>} />
-          <Route path='contactus' element={<ContactUs/>} />
-          {/* <Route path='python' element={<Introduction/>} />  */}
-          {/* <Route path='pres1' element={<Slide1/>} /> 
-          <Route path='pres2' element={<Slide2/>} />  */}
+          {/* <Route path='welcome' element={<PreQuestions/>} /> */}
+          {/* <Route path='contactus' element={<ContactUs/>} /> */}
+          {/* <Route path='home/courses' element={<Courses/>} /> */}
 
+          
           <Route path="/" element={<LayoutsWithNavbar />}>
             {/* Pages with dashboard sidebar */}
             <Route path='home' element={<Dashboard/>} />
             <Route path='home/courses' element={<Courses/>} />
 
-            <Route path='home/courses/course1' element={<Course1/>} />
-            <Route path='home/courses/course2' element={<Course2/>} />
-            <Route path='home/courses/course3' element={<Course3/>} />
-            <Route path='home/courses/course4' element={<Course4/>} />
-            <Route path='home/courses/course5' element={<Course5/>} />
-            <Route path='home/courses/course6' element={<Course6/>} />
-            <Route path='home/courses/courseinfo1' element={<Courseinfo1/>} />
+            
+            <Route path='quiz1' element={<QuizOne />} />
+            <Route path='quiz2' element={<QuizTwo />} />
 
-          <Route path='quiz1' element={<QuizOne />} />
-          <Route path='quiz2' element={<QuizTwo />} />
-
-          <Route path='tests' element={<TestPage/>} />
-          <Route path='profile' element={<ProfilePage/>} />
-          <Route path='settings' element={<Settings/>} />
+            <Route path='tests' element={<TestPage/>} />
+            <Route path='profile' element={<ProfilePage/>} />
+            <Route path='settings' element={<Settings/>} />
 
 
           </Route>
