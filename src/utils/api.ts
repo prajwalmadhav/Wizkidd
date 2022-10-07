@@ -2,7 +2,7 @@ import axios from 'axios';
 import { ClientAPIConfig, ResponseBody } from '../interfaces';
 
 // API Routes
-const baseRoute = '/api/v1';
+const baseRoute = process.env.REACT_APP_BASE_URL + '/api/v1';
 
 const apiRoutes = {
   userAuth: baseRoute + '/auth',
