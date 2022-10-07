@@ -9,6 +9,7 @@ import {
     StackDivider,
     useColorModeValue,
     Icon,
+    AspectRatio,
   } from '@chakra-ui/react';
   // import {
   //   IoAnalyticsSharp,
@@ -45,18 +46,26 @@ import { IoLogoBitcoin } from 'react-icons/io';
     return (
       <Container maxW={'5xl'} py={12}>
         <SimpleGrid columns={{ base: 1, md: 2, lg:2 }} spacing={10}>
-        <Stack mt={{base:'-150%',lg:0}} ml={{base:5,lg:-40}} mr={{base:3,lg:1}}>
+        <Stack mt={{base:'-150%',lg:20}} ml={{base:5,lg:-40}} mr={{base:3,lg:20}} shadow="xl">
           <Flex >
+            
             <Image
-              rounded={'md'}
-              alt={'feature image'}
+              rounded={'lg'}
+              alt={'doctor image'}
               src={
-                'https://i.postimg.cc/hjDCv24M/Online-learning-amico.png'
+                'https://i.postimg.cc/ZY1Gg7mK/doc-illustration-removebg-preview.png'
               }
-              objectFit={'cover'}
+              
             />
           </Flex>   
-          </Stack>          
+          {/* <AspectRatio maxW='700px' ratio={16/9}>
+              <iframe
+                title='naruto'
+                src='https://postimg.cc/94gN0XMz'
+                allowFullScreen
+              />
+          </AspectRatio> */}
+        </Stack>          
           
           <Stack spacing={6} mr={{base: 0, lg:-40}} mt={{base: '-40%', lg: 20}} ml={{base: 0, lg:20}}>
             <Text
@@ -68,9 +77,9 @@ import { IoLogoBitcoin } from 'react-icons/io';
               p={2}
               alignSelf={'flex-start'}
               rounded={'md'}>
-              About Us
+              About the Doctor Course
             </Text>
-            <Heading>About us section </Heading>
+            <Heading>Title </Heading>
             <Text color={'gray.500'} textAlign='justify' fontSize={{base:'md',lg:'lg'}}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </Text>
