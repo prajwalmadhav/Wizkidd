@@ -12,11 +12,12 @@ const PlayIcon = createIcon({
 export default function Features7() {
   return (
   <Flex
-  bg="gray.200"
+  bg="#CAD7E6"
   _dark={{
-    bg: "#3e3e3e",
+    bg: "#CAD7E6",
   }}
   p={20}
+  
   w="full"
   justifyContent="center"
   alignItems="center"
