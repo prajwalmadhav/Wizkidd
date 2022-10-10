@@ -1,5 +1,6 @@
-import { apiRoutes, makeAPICall } from '.';
+import { apiRoutes, generateUniqueID, localStorageKeys, makeAPICall } from '.';
 import { GoogleAuthResponse } from '../interfaces';
+import { setDataInLocalStorage } from './function';
 
 const handleCredentialResponse = async (authResponse: GoogleAuthResponse) => {
   console.log(authResponse);
@@ -9,20 +10,23 @@ const handleCredentialResponse = async (authResponse: GoogleAuthResponse) => {
 
   // Create request payload
   const payload = {
-    // TODO: Add Dynamic ID
-    id: 222,
+    id: generateUniqueID(),
     credential,
   };
 
-  console.log(payload);
-
-  const response = await makeAPICall({
+  const { status, data = {} } = await makeAPICall({
     method: 'POST',
     url: apiRoutes.userAuth,
     data: payload,
   });
 
-  console.log('response', response);
+  // If status is true
+  if (status) {
+    // 1. Save response in localstorage
+    setDataInLocalStorage(localStorageKeys.USER, data);
+
+    // TODO: 2. Redirect to Dashboard
+  } else throw new Error("User can't ve verified");
 };
 
 export { handleCredentialResponse };

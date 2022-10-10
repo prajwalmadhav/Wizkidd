@@ -14,7 +14,7 @@ const makeAPICall = async (config: ClientAPIConfig) => {
 
   const responseBody: ResponseBody = response.data;
 
-  return responseBody.data;
+  return responseBody;
 };
 
 export { apiRoutes, makeAPICall };
