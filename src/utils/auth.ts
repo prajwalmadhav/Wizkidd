@@ -1,4 +1,4 @@
-import { apiRoutes, makeAPICall } from '.';
+import { apiRoutes, generateUniqueID, makeAPICall } from '.';
 import { GoogleAuthResponse } from '../interfaces';
 
 const handleCredentialResponse = async (authResponse: GoogleAuthResponse) => {
@@ -9,20 +9,20 @@ const handleCredentialResponse = async (authResponse: GoogleAuthResponse) => {
 
   // Create request payload
   const payload = {
-    // TODO: Add Dynamic ID
-    id: 222,
+    id: generateUniqueID(),
     credential,
   };
 
-  console.log(payload);
-
-  const response = await makeAPICall({
+  const { status } = await makeAPICall({
     method: 'POST',
     url: apiRoutes.userAuth,
     data: payload,
   });
 
-  console.log('response', response);
+  // 1. Save response in localstorage
+  if (status) {
+    
+  }
 };
 
 export { handleCredentialResponse };
