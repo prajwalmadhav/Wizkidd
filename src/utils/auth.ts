@@ -26,6 +26,7 @@ const handleCredentialResponse = async (authResponse: GoogleAuthResponse) => {
     setDataInLocalStorage(localStorageKeys.USER, data);
 
     // TODO: 2. Redirect to Dashboard
+    window.location = '/profile' as unknown as Location;
   } else throw new Error("User can't ve verified");
 };
 

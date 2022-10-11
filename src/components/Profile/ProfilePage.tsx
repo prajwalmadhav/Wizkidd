@@ -24,6 +24,8 @@ import {
   useColorModeValue,
   Flex,
 } from '@chakra-ui/react';
+import { useRedirectToDashboard } from '../../hooks';
+import { Navigate } from 'react-router-dom';
 
 ChartJS.register(
   RadialLinearScale,
@@ -67,6 +69,10 @@ export default function ProfilePage() {
   if (showName !== undefined) {
     showName = showName.split(' ')[0];
   }
+
+  const userLoggedIn = useRedirectToDashboard();
+  if (!userLoggedIn) return <Navigate to={'/'} />;
+
   return (
     <>
       <Flex ml={{ base: 0, lg: '20%' }}>
@@ -74,6 +80,7 @@ export default function ProfilePage() {
           <Box
             maxW={'800px'}
             w={'500px'}
+            // eslint-disable-next-line react-hooks/rules-of-hooks
             bg={useColorModeValue('white', 'gray.900')}
             boxShadow={'sm'}
             rounded={'lg'}

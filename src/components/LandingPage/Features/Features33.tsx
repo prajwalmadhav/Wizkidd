@@ -18,7 +18,7 @@ export default function Fgl() {
           w={8}
           h={8}
           mb={4}
-          mt={{lg:20}}
+          mt={{lg:'134px'}}
           rounded="full"
           color={useColorModeValue(`black`, `${props.color}.100`)}
           bg={useColorModeValue(`${props.color}`, `${props.color}.600`)}
@@ -59,15 +59,14 @@ export default function Fgl() {
       justifyContent="center"
       alignItems="center"
       py={{base:10,lg:40}}
-      mt={{lg:-40}}
       
     >
       <Box
         px={8}
         py={20}
         mx="auto"
-        bg={useColorModeValue("#0429", "gray.800")}
-        shadow="sm"
+        bg={useColorModeValue("#04294f", "gray.800")}
+        shadow="2xl"
         rounded={'lg'}
       >
         <Box textAlign={{ lg: "center" }}>
@@ -76,10 +75,10 @@ export default function Fgl() {
             fontSize={{ base: "3xl", sm: "4xl" }}
             lineHeight="8"
             fontWeight="extrabold"
-            letterSpacing="wide"
+            letterSpacing="tight"
             color={useColorModeValue("white","#fff")}
           >
-            FEATURES
+            Features
           </chakra.p>
           <chakra.p
             mt={4}
@@ -100,7 +99,7 @@ export default function Fgl() {
         >
           <Feature
             color="#ffb400"
-            title="Feature 1"
+            title="Personalized Learning"
             icon={
               <FaChalkboardTeacher  />
             }
@@ -110,7 +109,7 @@ export default function Fgl() {
 
           <Feature
             color={useColorModeValue("#ffb400", "#ffb400")}
-            title="Feature 2"
+            title="Adaptive Tests"
             icon={
               <FaFileInvoice/>
             }
@@ -121,7 +120,7 @@ export default function Fgl() {
 
           <Feature
             color="#ffb400"
-            title="Feature 3"
+            title="Online Platform"
             icon={
               <FaLaptop/>
             }
@@ -131,7 +130,7 @@ export default function Fgl() {
 
           <Feature
             color="#ffb400"
-            title="Feature 4"
+            title="Real-Time Feedback"
             icon={
               <FaClock/>
             }
@@ -140,7 +139,7 @@ export default function Fgl() {
           </Feature>
           <Feature
             color="#ffb400"
-            title="Feature 5"
+            title="Performance Analysis"
             icon={
               <FaChartPie/>
             }
@@ -149,7 +148,7 @@ export default function Fgl() {
           </Feature>
           <Feature
             color="#ffb400"
-            title="Feature 6"
+            title="Mobile responsive"
             icon={
               <FaMobileAlt/>
             }

@@ -167,7 +167,8 @@ export default function SignInModal({
             onFailure={onFailure}
             cookiePolicy={'single_host_origin'}
           /> */}
-          <GoogleAuthButton text="continue_with" />
+          <br></br>
+          <GoogleAuthButton text="continue_with" /> 
         </ModalBody>
         <br></br>
         <ModalFooter className="ModalFooter2"></ModalFooter>

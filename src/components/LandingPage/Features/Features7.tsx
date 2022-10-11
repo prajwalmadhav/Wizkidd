@@ -1,4 +1,4 @@
-import { Flex, Box, chakra, Stack, IconButton, createIcon, Button, SimpleGrid } from '@chakra-ui/react';
+import { Flex, Box, chakra, Stack, IconButton, createIcon, Button, SimpleGrid, AspectRatio } from '@chakra-ui/react';
 import React from 'react'
 import { Link } from 'react-router-dom';
 
@@ -12,11 +12,12 @@ const PlayIcon = createIcon({
 export default function Features7() {
   return (
   <Flex
-  bg="gray.200"
+  bg="#CAD7E6"
   _dark={{
-    bg: "#3e3e3e",
+    bg: "#CAD7E6",
   }}
   p={20}
+  
   w="full"
   justifyContent="center"
   alignItems="center"
@@ -35,6 +36,7 @@ export default function Features7() {
       rounded="xl"
       
     >
+      
       <SimpleGrid
         alignItems="start"
         columns={{
@@ -118,12 +120,21 @@ export default function Features7() {
         <Box
           w="full"
           h="full"
-          py={48}
-          bg="gray.200"
+          p={5}
+          bg="gray.100"
+          boxShadow={'xl'}
           _dark={{
             bg: "gray.700",
           }}
-        ></Box>
+        >
+          <AspectRatio maxW='700px' ratio={16/9}>
+              <iframe
+                title='naruto'
+                src='https://storage.googleapis.com/wizkid-media/media/Doctor%20Wizkid%20(1).mp4'
+                allowFullScreen
+              />
+          </AspectRatio>
+        </Box>
       </SimpleGrid>
       <SimpleGrid
         alignItems="center"
@@ -213,12 +224,20 @@ export default function Features7() {
         <Box
           w="full"
           h="full"
-          py={48}
+          p={5}
           bg="gray.200"
           _dark={{
             bg: "gray.700",
           }}
-        ></Box>
+        >
+          <AspectRatio maxW='700px' ratio={16/9}>
+              <iframe
+                title='naruto'
+                src='https://storage.googleapis.com/wizkid-media/media/Wizkid_Engg_final_cut.mp4'
+                allowFullScreen
+              />
+          </AspectRatio>
+        </Box>
       </SimpleGrid>
     </Box>
   </Flex>

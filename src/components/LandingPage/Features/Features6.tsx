@@ -32,7 +32,7 @@ const Home = () => {
       {/* All cards */} 
       <Heading as='h2' size='xl' 
       ml = {{ base: '25px', md: 20, lg: '15%' }}
-      mt = {{ base: '15px'}} 
+      mt = {{ base: '15px',lg:20}} 
       mb={{lg:'-50px'}}>
          | COURSES AVAILABLE
       </Heading> 
