@@ -19,7 +19,7 @@ const loadScript = (src: string) =>
 // Save data in localstorage
 const setDataInLocalStorage = (key: string, object: object) => {
   // 1. Get Stringified JSON
-  const StringifiedJSON = stringifyJSON(object) || '{}';
+  const StringifiedJSON = stringifyJSON(object) || '';
 
   // 2. Set data in localstorage
   localStorage.setItem(key, StringifiedJSON);
@@ -27,8 +27,10 @@ const setDataInLocalStorage = (key: string, object: object) => {
 
 // Get data from localstorage
 const getDataInLocalStorage = (key: string): object => {
-  // 1. Set data in localstorage
-  return parseJSON(key);
+  // 1. Get data in localstorage
+  const stringifiedJSON = localStorage.getItem(key) || '';
+
+  return parseJSON(stringifiedJSON);
 };
 
 // Stringify JSON
@@ -36,16 +38,16 @@ const stringifyJSON = (object: object) => {
   try {
     return JSON.stringify(object);
   } catch (error) {
-    console.log('Something went wrong');
+    console.log('Something went wrong with stringifyJSON');
   }
 };
 
 // Parse JSON
-const parseJSON = (StringifiedJSON: string) => {
+const parseJSON = (stringifiedJSON: string) => {
   try {
-    return JSON.parse(StringifiedJSON);
+    return JSON.parse(stringifiedJSON);
   } catch (error) {
-    console.log('Something went wrong');
+    console.log('Something went wrong with parseJSON');
   }
 };
 
