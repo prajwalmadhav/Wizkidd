@@ -169,13 +169,7 @@ const SignOut = async () => {
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   const navigate = useNavigate()
   const [currentUser, setCurrentUser] = useState<any | null>(null);
-  useEffect(() => {
-    firebase.auth().onAuthStateChanged((users) => {
-      if (users) {
-        setCurrentUser(users)
-      } 
-    });  
-  })
+ 
   
   var pic = "" as any
   if (pic == null || pic === undefined) {

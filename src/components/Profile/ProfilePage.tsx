@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import {
   Chart as ChartJS,
   RadialLinearScale,
@@ -8,9 +7,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-import { Radar } from 'react-chartjs-2';
-import './ProfilePage.min.css';
-import firebase from 'firebase/compat/app';
+import  './ProfilePage.min.css';
 import {
   Heading,
   Avatar,
@@ -18,14 +15,14 @@ import {
   Center,
   Text,
   Stack,
-  Button,
-  Link,
-  Badge,
   useColorModeValue,
   Flex,
+  FormControl,
+  FormLabel,
+  HStack,
+  Input,
 } from '@chakra-ui/react';
-import { useRedirectToDashboard } from '../../hooks';
-import { Navigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 ChartJS.register(
   RadialLinearScale,
@@ -41,7 +38,7 @@ export const data = {
   datasets: [
     {
       label: 'Report',
-      data: [6, 5, 8, 2, 8, 9],
+      data: [6, 5, 8, 2, 8,9],
       backgroundColor: 'rgba(255, 99, 132, 0.2)',
       borderColor: 'rgba(255, 99, 132, 1)',
       borderWidth: 10,
@@ -49,47 +46,32 @@ export const data = {
   ],
 };
 
+const getDataInLocalStorage = (key: string): object => {
+  // 1. Get data in localstorage
+  const stringifiedJSON = localStorage.getItem(key) || '';
+
+  return parseJSON(stringifiedJSON);
+};
+
+  
 export default function ProfilePage() {
-  const [currentUser, setCurrentUser] = useState<any | null>(null);
-  useEffect(() => {
-    firebase.auth().onAuthStateChanged((users) => {
-      if (users) {
-        setCurrentUser(users);
-      }
-    });
-  });
-  var pic = "" as any;
-  if (pic == null || pic === undefined) {
-    pic = 'https://joeschmoe.io/api/v1/random' as any;
-  }
-  let showName = "John" as string;
-  const user = firebase.auth().currentUser;
-  const uid = user?.uid;
-  const ref = firebase.firestore().collection('person');
-  if (showName !== undefined) {
-    showName = showName.split(' ')[0];
-  }
-
-  const userLoggedIn = useRedirectToDashboard();
-  if (!userLoggedIn) return <Navigate to={'/'} />;
-
-  return (
-    <>
-      <Flex ml={{ base: 0, lg: '20%' }}>
+   
+  return( 
+  <>
+    <Flex ml={{ base: 0, lg: '20%' }} >
         <Center py={6}>
           <Box
             maxW={'800px'}
             w={'500px'}
-            // eslint-disable-next-line react-hooks/rules-of-hooks
-            bg={useColorModeValue('white', 'gray.900')}
-            boxShadow={'sm'}
+
+            bg={useColorModeValue('#ffffff00', 'gray.900')}
+            boxShadow={''}
             rounded={'lg'}
             p={6}
-            textAlign={'center'}
-          >
+            textAlign={'center'}>
             <Avatar
               size={'3xl'}
-              src={pic}
+              // src={pic}
               alt={'Avatar Alt'}
               mb={4}
               pos={'relative'}
@@ -103,16 +85,66 @@ export default function ProfilePage() {
                 pos: 'absolute',
                 bottom: 0,
                 right: 3,
-              }}
-            />
+              }} />
             <Heading fontSize={'2xl'} fontFamily={'body'}>
-              {currentUser?.displayName}
+            
             </Heading>
-            <Text fontWeight={600} color={'gray.500'} mb={4}></Text>
+            {}{localStorage.getItem('picture')}
+            <Text fontWeight={600} color={'gray.500'} mb={4}>
+                Profile Photo
+            </Text>
           </Box>
         </Center>
-        <Radar data={data} />
+        <Box> 
+      <Flex
+        minH={'80vh'}
+        align={'center'}
+        justify={'center'}
+        bg={useColorModeValue('white', 'gray.800')}>
+        <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
+          <Box
+            rounded={'lg'}
+            bg={useColorModeValue('white', 'gray.700')}
+            boxShadow={'lg'}
+            p={8}>
+            <Stack spacing={4}>
+              <HStack>
+                <Box>
+                  <FormControl id="firstName" >
+                    <FormLabel>{localStorage.getItem('name')}</FormLabel>
+                    
+
+ 
+                    
+                  </FormControl>
+                </Box>
+                <Box>
+                  
+                </Box>
+              </HStack>
+              <FormControl id="email" >
+                <FormLabel>{localStorage.getItem('email')}</FormLabel>
+                
+              </FormControl>
+              
+              
+              
+            </Stack>
+          </Box>
+        </Stack>
       </Flex>
-    </>
+
+      </Box>
+      </Flex>
+      
+      
+      
+  </>
+    
+  
   );
 }
+function parseJSON(stringifiedJSON: string): object {
+  throw new Error('Function not implemented.');
+}
+
