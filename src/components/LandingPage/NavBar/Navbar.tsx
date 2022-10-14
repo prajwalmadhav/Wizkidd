@@ -38,7 +38,6 @@ import {
 } from '@chakra-ui/icons';
 
 import React, { useState, useRef } from 'react';
-import 'firebase/compat/auth';
 import { Col, Container, Form, Navbar } from 'react-bootstrap';
 import SignInModal from '../Modals/SignInModal';
 import Logo from '../../../assets/Images/logoblack.png';
