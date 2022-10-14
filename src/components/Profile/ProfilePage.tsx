@@ -111,7 +111,7 @@ export default function ProfilePage() {
               <HStack>
                 <Box>
                   <FormControl id="firstName" >
-                    <FormLabel>{localStorage.getItem('name')}</FormLabel>
+                    <FormLabel>Name{localStorage.getItem('name')}</FormLabel>
                     
 
  
@@ -123,7 +123,7 @@ export default function ProfilePage() {
                 </Box>
               </HStack>
               <FormControl id="email" >
-                <FormLabel>{localStorage.getItem('email')}</FormLabel>
+                <FormLabel>Email{localStorage.getItem('email')}</FormLabel>
                 
               </FormControl>
               
