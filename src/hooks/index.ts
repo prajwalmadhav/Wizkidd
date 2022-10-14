@@ -1,4 +1,4 @@
 import useGoogleAuth from './useGoogleAuth';
-import useRedirectToDashboard from './useRedirectToDashboard';
+import useUserData from './useUserData';
 
-export { useGoogleAuth, useRedirectToDashboard };
+export { useGoogleAuth, useUserData };

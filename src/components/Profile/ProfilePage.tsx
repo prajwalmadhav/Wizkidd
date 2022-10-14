@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Chart as ChartJS,
   RadialLinearScale,
@@ -19,8 +19,9 @@ import {
   useColorModeValue,
   Flex,
 } from '@chakra-ui/react';
-import { useRedirectToDashboard } from '../../hooks';
+import { useUserData } from '../../hooks';
 import { Navigate } from 'react-router-dom';
+import { localStorageKeys } from '../../utils';
 
 ChartJS.register(
   RadialLinearScale,
@@ -55,9 +56,10 @@ export default function ProfilePage() {
     showName = showName.split(' ')[0];
   }
 
-  const userLoggedIn = useRedirectToDashboard();
-  console.log('userLoggedIn', userLoggedIn);
-  if (!userLoggedIn) return <Navigate to={'/'} />;
+  const user = useUserData();
+  if (!user) return <Navigate to={'/'} />;
+
+  console.log(user);
 
   return (
     <>

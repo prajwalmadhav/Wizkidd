@@ -1,12 +1,11 @@
 import { getDataInLocalStorage, localStorageKeys } from '../utils';
 
-const useRedirectToDashboard = () => {
+const useUserData = () => {
   const user = getDataInLocalStorage(localStorageKeys.USER);
-  console.log(user);
 
-  if (user) return true;
+  if (user) return user;
 
   return false;
 };
 
-export default useRedirectToDashboard;
+export default useUserData;
