@@ -44,11 +44,11 @@ export const App = () => {
           {/* <Route path='welcome' element={<PreQuestions/>} /> */}
           {/* <Route path='contactus' element={<ContactUs/>} /> */}
           {/* <Route path='home/courses' element={<Courses/>} /> */}
+          <Route path='home' element={<Dashboard/>} />
 
           
           <Route path="/" element={<LayoutsWithNavbar />}>
             {/* Pages with dashboard sidebar */}
-            <Route path='home' element={<Dashboard/>} />
             <Route path='home/courses' element={<Courses/>} />
 
             
