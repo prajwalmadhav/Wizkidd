@@ -9,13 +9,13 @@ import Features6 from '../../components/LandingPage/Features/Features6';
 import Features7 from '../../components/LandingPage/Features/Features7';
 import Features1 from '../../components/LandingPage/Features/Features1';
 import Features33 from '../../components/LandingPage/Features/Features33';
-import { useRedirectToDashboard } from '../../hooks';
+import { useUserData } from '../../hooks';
 import { Navigate } from 'react-router-dom';
 
 export default function Homepage() {
-  const userLoggedIn = useRedirectToDashboard();
-  //   console.log(userLoggedIn);
-  if (userLoggedIn) return <Navigate to={'/profile'} />;
+  const user = useUserData();
+  //   console.log(user);
+  if (user) return <Navigate to={'/profile'} />;
 
   return (
     <>

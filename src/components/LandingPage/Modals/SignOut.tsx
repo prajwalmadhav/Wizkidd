@@ -29,8 +29,6 @@ import {
 } from '@chakra-ui/react';
 import './SignInModal.min.css';
 import { Button, Col, Container, Form, Navbar } from 'react-bootstrap';
-import { initializeApp } from 'firebase/app';
-import { signOut } from 'firebase/auth';
 
 export default function SignOut() {
   const signOut = async () => {};

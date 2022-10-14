@@ -10,22 +10,18 @@ import {
 } from 'chart.js';
 import { Radar } from 'react-chartjs-2';
 import './ProfilePage.min.css';
-import firebase from 'firebase/compat/app';
 import {
   Heading,
   Avatar,
   Box,
   Center,
   Text,
-  Stack,
-  Button,
-  Link,
-  Badge,
   useColorModeValue,
   Flex,
 } from '@chakra-ui/react';
-import { useRedirectToDashboard } from '../../hooks';
+import { useUserData } from '../../hooks';
 import { Navigate } from 'react-router-dom';
+import { localStorageKeys } from '../../utils';
 
 ChartJS.register(
   RadialLinearScale,
@@ -51,27 +47,19 @@ export const data = {
 
 export default function ProfilePage() {
   const [currentUser, setCurrentUser] = useState<any | null>(null);
-  useEffect(() => {
-    firebase.auth().onAuthStateChanged((users) => {
-      if (users) {
-        setCurrentUser(users);
-      }
-    });
-  });
-  var pic = "" as any;
+  var pic = '' as any;
   if (pic == null || pic === undefined) {
     pic = 'https://joeschmoe.io/api/v1/random' as any;
   }
-  let showName = "John" as string;
-  const user = firebase.auth().currentUser;
-  const uid = user?.uid;
-  const ref = firebase.firestore().collection('person');
+  let showName = 'John' as string;
   if (showName !== undefined) {
     showName = showName.split(' ')[0];
   }
 
-  const userLoggedIn = useRedirectToDashboard();
-  if (!userLoggedIn) return <Navigate to={'/'} />;
+  const user = useUserData();
+  if (!user) return <Navigate to={'/'} />;
+
+  console.log(user);
 
   return (
     <>

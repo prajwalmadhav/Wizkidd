@@ -34,28 +34,23 @@ import {
 } from 'react-icons/fi';
 import { IconType } from 'react-icons';
 import { ReactText } from 'react';
-import Logo from "../../assets/Images/logoblack.png";
-import {signOut} from "firebase/auth";
-import { useNavigate } from "react-router-dom"
+import Logo from '../../assets/Images/logoblack.png';
+import { useNavigate } from 'react-router-dom';
 import { link } from 'fs';
-import firebase from 'firebase/compat/app';
 
 interface LinkItemProps {
   name: string;
   icon: IconType;
-  link?:string;
+  link?: string;
 }
 
 const LinkItems: Array<LinkItemProps> = [
-  { name: 'Home', icon: FiHome, link:'/home'},
-  { name: 'Courses', icon: FiTrendingUp, link:'/home/courses' },
-  { name: 'Tests', icon: FiCompass, link:'/tests'},
-  { name: 'Profile', icon: FiStar , link:'/profile'},
-  { name: 'Settings', icon: FiSettings , link:'/settings' },
-  
-
+  { name: 'Home', icon: FiHome, link: '/home' },
+  { name: 'Courses', icon: FiTrendingUp, link: '/home/courses' },
+  { name: 'Tests', icon: FiCompass, link: '/tests' },
+  { name: 'Profile', icon: FiStar, link: '/profile' },
+  { name: 'Settings', icon: FiSettings, link: '/settings' },
 ];
-
 
 export default function SidebarWithHeader({
   children,
@@ -64,9 +59,8 @@ export default function SidebarWithHeader({
 }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  
   return (
-    <Box bg={useColorModeValue("#fff", "gray.600")}>
+    <Box bg={useColorModeValue('#fff', 'gray.600')}>
       <SidebarContent
         onClose={() => onClose}
         display={{ base: 'none', md: 'block' }}
@@ -78,7 +72,8 @@ export default function SidebarWithHeader({
         onClose={onClose}
         returnFocusOnClose={false}
         onOverlayClick={onClose}
-        size="full">
+        size="full"
+      >
         <DrawerContent>
           <SidebarContent onClose={onClose} />
         </DrawerContent>
@@ -106,12 +101,13 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       w={{ base: 'full', md: 60 }}
       pos="fixed"
       h="full"
-      {...rest}>
+      {...rest}
+    >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
         <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-        <a href="/home">
-        <img alt='logo' style={{ width: ' 50px' }} src={ Logo } />
-        </a>
+          <a href="/home">
+            <img alt="logo" style={{ width: ' 50px' }} src={Logo} />
+          </a>
         </Text>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
@@ -131,7 +127,11 @@ interface NavItemProps extends FlexProps {
 }
 const NavItem = ({ icon, children, link, ...rest }: NavItemProps) => {
   return (
-    <Link href={link} style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
+    <Link
+      href={link}
+      style={{ textDecoration: 'none' }}
+      _focus={{ boxShadow: 'none' }}
+    >
       <Flex
         align="center"
         p="4"
@@ -143,7 +143,8 @@ const NavItem = ({ icon, children, link, ...rest }: NavItemProps) => {
           bg: '#080f7b',
           color: 'white',
         }}
-        {...rest}>
+        {...rest}
+      >
         {icon && (
           <Icon
             mr="4"
@@ -167,19 +168,12 @@ const SignOut = async () => {
   // await auth.signOut();
 };
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [currentUser, setCurrentUser] = useState<any | null>(null);
-  useEffect(() => {
-    firebase.auth().onAuthStateChanged((users) => {
-      if (users) {
-        setCurrentUser(users)
-      } 
-    });  
-  })
-  
-  var pic = "" as any
+
+  var pic = '' as any;
   if (pic == null || pic === undefined) {
-    pic = "https://joeschmoe.io/api/v1/random" as any
+    pic = 'https://joeschmoe.io/api/v1/random' as any;
   }
   return (
     <Flex
@@ -191,7 +185,8 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       borderBottomWidth="2px"
       borderBottomColor={useColorModeValue('#9e9e9e', 'gray.700')}
       justifyContent={{ base: 'space-between', md: 'flex-end' }}
-      {...rest}>
+      {...rest}
+    >
       <IconButton
         display={{ base: 'flex', md: 'none' }}
         onClick={onOpen}
@@ -200,11 +195,8 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         icon={<FiMenu />}
       />
 
-      <Text
-        display={{ base: 'flex', md: 'none' }}>
-  
-        <img alt='logo' style={{ width: 150 }} src={ Logo } />
-        
+      <Text display={{ base: 'flex', md: 'none' }}>
+        <img alt="logo" style={{ width: 150 }} src={Logo} />
       </Text>
 
       <HStack spacing={{ base: '0', md: '6' }}>
@@ -219,19 +211,16 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
             <MenuButton
               py={2}
               transition="all 0.3s"
-              _focus={{ boxShadow: 'none' }}>
+              _focus={{ boxShadow: 'none' }}
+            >
               <HStack>
-                <Avatar
-                  size={'sm'}
-                  src={
-                    pic
-                  }
-                />
+                <Avatar size={'sm'} src={pic} />
                 <VStack
                   display={{ base: 'none', md: 'flex' }}
                   alignItems="flex-start"
                   spacing="1px"
-                  ml="2">
+                  ml="2"
+                >
                   <Text fontSize="sm">{currentUser?.displayName}</Text>
                   <Text fontSize="xs" color="gray.600">
                     Student
@@ -244,16 +233,21 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
             </MenuButton>
             <MenuList
               bg={useColorModeValue('white', 'gray.900')}
-              borderColor={useColorModeValue('gray.200', 'gray.700')}>
+              borderColor={useColorModeValue('gray.200', 'gray.700')}
+            >
               <MenuItem>Profile</MenuItem>
               <MenuItem>Settings</MenuItem>
               <MenuItem>Subscription</MenuItem>
               <MenuDivider />
-              <MenuItem  onClick={()=>{
-              SignOut()
-              console.log('DONE')
-              navigate('/');
-              }}>Sign out</MenuItem>
+              <MenuItem
+                onClick={() => {
+                  SignOut();
+                  console.log('DONE');
+                  navigate('/');
+                }}
+              >
+                Sign out
+              </MenuItem>
             </MenuList>
           </Menu>
         </Flex>
@@ -261,4 +255,3 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
     </Flex>
   );
 };
-
