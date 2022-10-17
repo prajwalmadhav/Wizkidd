@@ -61,25 +61,29 @@ export default function ProfilePage() {
 
   console.log(user);
 
+
+
   return (
-    <>
-      <Flex ml={{ base: 0, lg: '20%' }}>
-        <Center py={6}>
+    
+      <Flex ml={{ base: 0, lg: '23%' }} mt={{lg:5}}>
+        <Center p={6} pr={40} boxShadow={'md'} rounded="2xl">
+
           <Box
             maxW={'800px'}
             w={'500px'}
             // eslint-disable-next-line react-hooks/rules-of-hooks
             bg={useColorModeValue('white', 'gray.900')}
-            boxShadow={'sm'}
+            
             rounded={'lg'}
-            p={6}
+            p={20}
             textAlign={'center'}
-          >
+            >
+            {/* // Add Image Tag here */}
             <Avatar
-              size={'3xl'}
-              src={pic}
-              alt={'Avatar Alt'}
-              mb={4}
+              size={'2xl'}
+              src={user.picture}
+              alt={'Profile Photo [Google]'}
+              mb={5}
               pos={'relative'}
               _after={{
                 content: '""',
@@ -92,15 +96,36 @@ export default function ProfilePage() {
                 bottom: 0,
                 right: 3,
               }}
+              
             />
-            <Heading fontSize={'2xl'} fontFamily={'body'}>
-              {currentUser?.displayName}
-            </Heading>
-            <Text fontWeight={600} color={'gray.500'} mb={4}></Text>
+            <Text fontWeight={600} fontSize={'lg'} color={'gray.500'} mt={1}>Profile Image</Text>
+
+
           </Box>
-        </Center>
-        <Radar data={data} />
+          {/* name and email box */}
+          <Box >
+              <Heading fontSize={'xl'} fontWeight="medium" mb={{ lg:1}} ml={{ lg:0}} fontFamily={'body'}>
+                Profile Name 
+              </Heading>
+              {/* <br/> */}
+              <Heading fontSize={'4xl'} fontWeight="semibold" mb={{ lg:10}} fontFamily={'body'} textTransform="uppercase">
+                {user.name}                
+              </Heading>
+              <Text fontWeight={600} color={'gray.500'} mt={1}></Text>
+
+              <Heading fontSize={'xl'} fontWeight="medium" mb={{ lg:1}} ml={{ lg:0}} fontFamily={'body'}>
+                Email Id
+              </Heading>
+              {/* <br/> */}
+              <Heading fontSize={'2xl'} fontWeight="bold" fontFamily={'body'}>
+                {user.email}                
+              </Heading>
+              <Text fontWeight={600} color={'gray.500'} mt={1}></Text>
+
+          </Box>         
+          
+        </Center>        
       </Flex>
-    </>
+    
   );
 }
