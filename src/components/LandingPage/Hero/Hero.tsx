@@ -12,6 +12,7 @@ import {
   createIcon,
   IconProps,
   useColorModeValue,
+  AspectRatio,
 } from '@chakra-ui/react';
 
 export default function CallToActionWithVideo() {
@@ -90,7 +91,7 @@ export default function CallToActionWithVideo() {
           />
           <Box
             position={'relative'}
-            height={'500px'}
+            height={'490px'}
             rounded={'2xl'}
             boxShadow={'2xl'}
             width={'875px'}
@@ -107,16 +108,23 @@ export default function CallToActionWithVideo() {
               top={'50%'}
               transform={'translateX(-50%) translateY(-50%)'}
             />
-            <Image
+            {/* <Image
               alt={'Hero Image'}
               fit={'cover'}
               align={'center'}
               w={'100%'}
               h={'100%'}
               src={
-                'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80'
+                'https://storage.googleapis.com/wizkid-media/media/Doctor%20Wizkid%20(1).mp4'
               }
-            />
+            /> */}
+            <AspectRatio maxW='875px' ratio={16/9}>
+              <iframe
+                title='naruto'
+                src='https://storage.googleapis.com/wizkid-media/media/Doctor%20Wizkid%20(1).mp4'
+                allowFullScreen
+              />
+          </AspectRatio>
           </Box>
         </Flex>
       </Stack>
