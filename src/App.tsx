@@ -42,7 +42,7 @@ export const App = () => {
             }
           />
 
-          {/* <Route path='home' element={<Dashboard/>} /> */}
+          <Route path='home' element={<Dashboard/>} />
           <Route path="smoke" element={<Testpg />} />
           <Route path="pg" element={<Testpg />} />
           {/* <Route path='welcome' element={<PreQuestions/>} /> */}
@@ -51,7 +51,7 @@ export const App = () => {
 
           <Route path="/" element={<LayoutsWithNavbar />}>
             {/* Pages with dashboard sidebar */}
-            <Route path="home" element={<Dashboard />} />
+            {/* <Route path="home" element={<Dashboard />} /> */}
             <Route path="home/courses" element={<Courses />} />
 
             <Route path="quiz1" element={<QuizOne />} />
