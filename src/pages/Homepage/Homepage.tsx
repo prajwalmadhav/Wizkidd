@@ -21,16 +21,15 @@ export default function Homepage() {
     <>
       <NavBar />
       <Hero />
-      <Features1 />
       <Features2 />
+      <Features1 />
 
       <Features7 />
-      <Features3 />
       <Features33 />
-      {/* <Features4 /> */}
+      <Features3 />     
       <Features5 />
       <Features6 />
-      {/* <Testimonials /> */}
+      
       <Footer />
     </>
   );
