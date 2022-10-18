@@ -59,7 +59,7 @@ export default function Fgl() {
       justifyContent="center"
       alignItems="center"
       py={{base:10,lg:40}}
-      mt={{lg:-40}}
+      mt={{lg:-20}}
       
     >
       <Box
