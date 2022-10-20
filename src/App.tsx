@@ -24,6 +24,7 @@ const Homepage = lazy(() => import('./pages/Homepage/Homepage'));
 
 export const App = () => {
   var Spinner = require('react-spinkit');
+  console.log("REACT_APP_GOOGLE_AUTH_CLIENT_ID", process.env.REACT_APP_GOOGLE_AUTH_CLIENT_ID)
 
   return (
     <ChakraProvider theme={theme}>
