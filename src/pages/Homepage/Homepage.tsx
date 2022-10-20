@@ -22,12 +22,12 @@ export default function Homepage() {
       <NavBar />
       <Hero />
       <Features2 />
-      <Features1 />
+      {/* <Features1 /> */}
+      <Features5 />
 
       <Features7 />
       <Features33 />
       <Features3 />     
-      <Features5 />
       <Features6 />
       
       <Footer />
