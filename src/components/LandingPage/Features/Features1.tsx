@@ -23,8 +23,8 @@ import {
   export default function ProductSimple() {
     return (
         
-        <Flex mt={{lg:10}} ml={{lg:4}} mb={{lg:60}} bg={useColorModeValue('white', 'gray.800')}>
-            <HStack  spacing={35} pl={35} pt={60} pb={58} bg={useColorModeValue('white', 'gray.800')}> 
+        <Flex mt={{base:0,lg:10}} ml={{base:0,lg:4}} mb={{base:0,lg:60}} bg={useColorModeValue('white', 'gray.800')}>
+            <HStack  spacing={{lg:35}} pl={{lg:35}} pt={{lg:60}} pb={{lg:58}} bg={useColorModeValue('white', 'gray.800')}> 
             
             <Box
                 role={'group'}
@@ -153,7 +153,7 @@ import {
                 </Stack>
             </Box>
                 {/* box 3 */}
-                <Box
+            <Box
                 role={'group'}
                 p={6}
                 maxW={'330px'}
