@@ -88,11 +88,11 @@ import Logo from "../../../assets/Images/logoblack.png";
               fontFamily={'heading'}
               color={useColorModeValue('gray.800', 'white')}>
                <a href="/home">
-              <img alt='logo' style={{ width: 40 }} src={ Logo } />   {/* logo */}
+              <img alt='logo' style={{width: 50  }}  src={ Logo } />   
               </a>
               
             </Text>
-            <Text ml={{lg:5}} fontFamily={'heading'}  fontSize={{ base: '3xl', sm: '4xl', lg: '3xl' }} fontWeight={600} as={'span'}  >Wizkid Academy</Text>
+            <Text ml={{lg:5}} fontFamily={'heading'}  fontSize={{ base: 'xl', sm: '4xl', lg: '3xl' }} fontWeight={600} as={'span'}  >Wizkid Academy</Text>
   
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
               <DesktopNav />
