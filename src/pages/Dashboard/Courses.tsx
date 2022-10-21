@@ -11,6 +11,7 @@ export default function Courses() {
             <Course1 />
             <QuizOne />
             <Course2 />
+            
         </>
     )
 }
