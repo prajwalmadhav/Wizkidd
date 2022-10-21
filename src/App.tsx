@@ -15,12 +15,13 @@ import Testpg from './components/Dashboard/Trial/Testpg';
 
 import QuizOne from './components/Quiz/QuizOne';
 import QuizTwo from './components/Quiz/QuizTwo';
-
+import Catalog from './components/Courses/Catalog';
 import './App.css';
 import TestPage from './components/TestPage/TestPage';
 import Settings from './components/Settings/Settings';
 import ProfilePage from './components/Profile/ProfilePage';
 const Homepage = lazy(() => import('./pages/Homepage/Homepage'));
+
 
 export const App = () => {
   var Spinner = require('react-spinkit');
@@ -54,6 +55,8 @@ export const App = () => {
             {/* Pages with dashboard sidebar */}
             {/* <Route path="home" element={<Dashboard />} /> */}
             <Route path="home/courses" element={<Courses />} />
+            <Route path="home/catalog" element={<Catalog />} />
+
 
             <Route path="quiz1" element={<QuizOne />} />
             <Route path="quiz2" element={<QuizTwo />} />
