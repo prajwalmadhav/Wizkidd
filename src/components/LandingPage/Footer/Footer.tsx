@@ -70,7 +70,7 @@ export default function LargeWithLogoCentered() {
           <img alt='logo' style={{ width: 50 }} src={ Logo }  />
         </Flex>
         <Text ml={'-200px'}pt={6} fontSize={'md'} textAlign={'center'}>
-          © 2022 Wizkid. All rights reserved
+          © 2022 Wizkid Academy. All rights reserved
         </Text>
       </Box>
 

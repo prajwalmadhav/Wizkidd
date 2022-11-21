@@ -46,14 +46,15 @@ import { IoLogoBitcoin } from 'react-icons/io';
     return (
       <Container maxW={'5xl'} py={12}>
         <SimpleGrid columns={{ base: 1, md: 2, lg:2 }} spacing={10}>
-        <Stack mt={{base:'-150%',lg:20}} ml={{base:5,lg:-40}} mr={{base:3,lg:20}} shadow="xl">
-          <Flex >
+        <Stack mt={{base:'-150%',lg:10}} ml={{base:5,lg:-60}} mr={{base:3,lg:20}} >
+          <Flex minW={'xl'}>
             
             <Image
               rounded={'lg'}
-              alt={'doctor image'}
+              minW={'3xl'}
+              alt={'doctor girl image'}
               src={
-                'https://i.postimg.cc/ZY1Gg7mK/doc-illustration-removebg-preview.png'
+                'https://i.postimg.cc/Fsk5sB3q/young-girl-dressed-as-doctor-newfinal-removebg-preview.png'
               }
               
             />

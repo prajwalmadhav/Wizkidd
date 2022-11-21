@@ -17,8 +17,10 @@ import {
 
 export default function CallToActionWithVideo() {
   return (
-    <Container maxW={'8xl'}>
+    //     backgroundImage={''}
+    <Container className="Hero" maxW={'8xl'} mt={{lg:-10}} backgroundImage={'https://i.postimg.cc/x8x6vnHQ/Kid-wallpaper.jpg'}>
       <Stack
+        // backgroundColor={'#DFE5F7'}
         align={'center'}
         spacing={{ base: 8, md: 10 }}
         py={{ base: 20, md: 28 }}
@@ -27,9 +29,11 @@ export default function CallToActionWithVideo() {
           <Heading
             lineHeight={1.1}
             fontWeight={600}
-            fontSize={{ base: '3xl', sm: '4xl', lg: '5xl' }}>
+            fontSize={{ base: '3xl', sm: '4xl', lg: '44px' }}>
             <Text
               as={'span'}
+              color={'#254493'}
+              fontFamily={'roboto'}             
               position={'relative'}
               _after={{
                 content: "''",
@@ -44,12 +48,12 @@ export default function CallToActionWithVideo() {
               YOUR TIME MACHINE 
             </Text>
             <br />
-            <Text as={'span'} color={'red.400'}>
+            <Text as={'span'} color={'#254493'} fontFamily={'roboto'}>
               TO THE FUTURE
             </Text>
           </Heading>
-          <Text color={'gray.500'}>
-          Every child has a Dream. Every Dream has a Goal. Every Goal has an Action. Every Action comes with an Experience.
+          <Text color={'gray.500'} fontSize={{ base: 'sm', sm: 'md', lg: '27px' }} mt={{lg:0}}>
+          Experience different professions and take an informed choice about your career.
           </Text>
           <Stack
             spacing={{ base: 4, sm: 6 }}
@@ -57,21 +61,22 @@ export default function CallToActionWithVideo() {
             <Button
               rounded={'full'}
               size={'lg'}
+              left={{lg:'150px'}}
               fontWeight={'normal'}
               px={6}
               colorScheme={'red'}
               bg={'red.400'}
               _hover={{ bg: 'red.500' }}>
-              Get started
+              Register Now
             </Button>
-            <Button
+            {/* <Button
               rounded={'full'}
               size={'lg'}
               fontWeight={'normal'}
               px={6}
               leftIcon={<PlayIcon h={4} w={4} color={'gray.300'} />}>
               How It Works
-            </Button>
+            </Button> */}
           </Stack>
         </Stack>
         <Flex
@@ -118,10 +123,10 @@ export default function CallToActionWithVideo() {
                 'https://storage.googleapis.com/wizkid-media/media/Doctor%20Wizkid%20(1).mp4'
               }
             /> */}
-            <AspectRatio maxW='875px' ratio={16/9}>
+            <AspectRatio  maxW='875px' ratio={16/9}>
               <iframe
-                title='naruto'
-                src='https://storage.googleapis.com/wizkid-media/media/Doctor%20Wizkid%20(1).mp4'
+                title='hero video'
+                src='https://video.wixstatic.com/video/e5a1d6_a8bb4f1789c64f02a33b8f372a65cc8a/360p/mp4/file.mp4'
                 allowFullScreen
               />
           </AspectRatio>
