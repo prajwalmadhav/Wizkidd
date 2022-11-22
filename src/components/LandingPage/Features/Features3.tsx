@@ -66,7 +66,7 @@ export default function Fgl() {
         px={8}
         py={20}
         mx="auto"
-        bg={useColorModeValue("#0429", "gray.800")}
+        bg={useColorModeValue("#00000085", "gray.800")}
         shadow="sm"
         rounded={'lg'}
       >
