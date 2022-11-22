@@ -11,6 +11,7 @@ import Features1 from '../../components/LandingPage/Features/Features1';
 import Features33 from '../../components/LandingPage/Features/Features33';
 import { useUserData } from '../../hooks';
 import { Navigate } from 'react-router-dom';
+import Features8 from './../../components/LandingPage/Features/Features8';
 
 export default function Homepage() {
   const user = useUserData();
@@ -29,6 +30,7 @@ export default function Homepage() {
       <Features33 />
       <Features3 />     
       <Features6 />
+      <Features8 />
       
       <Footer />
     </>
