@@ -76,7 +76,7 @@ export default function Fg()  {
         shadow="xl"
       >
         <Feature
-          title="Unify your payments stack"
+          title="Knowledge"
           icon={
             <path
               strokeLinecap="round"
@@ -86,13 +86,11 @@ export default function Fg()  {
             />
           }
         >
-          Manage all your online and offline sales in one place with a single
-          integration, simplifying reporting and reconciliation. Terminal works
-          seamlessly with Payments, Connect, and Billing.
+         Anatomy Physiology Clinical Medicine Diseases & Treatments Medical Investigations & More 
         </Feature>
 
         <Feature
-          title="Own your in-store experience"
+          title="Skill Set"
           icon={
             <path
               fillRule="evenodd"
@@ -101,13 +99,11 @@ export default function Fg()  {
             />
           }
         >
-          Provide a seamless customer experience across channels, like reserving
-          online and picking up in store. Our SDKs make it easy to integrate
-          into your own mobile and web applications to accept in-store payments.
+          History Taking Clinical Examination Report Interpretation Medical Instruments Communication Skills & More 
         </Feature>
 
         <Feature
-          title="Grow your platform’s revenue"
+          title="Mind Set"
           icon={
             <path
               strokeLinecap="round"
@@ -117,10 +113,7 @@ export default function Fg()  {
             />
           }
         >
-          Add in-person payments to your platform or marketplace. Using Terminal
-          with Connect, you can onboard users for online and in-person payments,
-          and unify their payouts across channels.
-        </Feature>
+          History Taking Clinical Examination Report Interpretation Medical Instruments Communication Skills & More         </Feature>
       </SimpleGrid>
     </Flex>
   );
