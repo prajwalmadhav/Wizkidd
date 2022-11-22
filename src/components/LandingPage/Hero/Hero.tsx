@@ -17,8 +17,8 @@ import {
 
 export default function CallToActionWithVideo() {
   return (
-    //     backgroundImage={''}
-    <Container className="Hero" maxW={'8xl'} mt={{lg:-10}} backgroundImage={'https://i.postimg.cc/x8x6vnHQ/Kid-wallpaper.jpg'}>
+    //     backgroundImage={'https://i.postimg.cc/x8x6vnHQ/Kid-wallpaper.jpg'}
+    <Container className="Hero" maxW={'8xl'} mt={{lg:-10}} backgroundImage={''}>
       <Stack
         // backgroundColor={'#DFE5F7'}
         align={'center'}
